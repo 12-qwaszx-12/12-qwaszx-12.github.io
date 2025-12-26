@@ -5,10 +5,10 @@
     
     <entry>
       <title>第一篇</title>
-      <link href="/wrnlm/%E8%BF%99%E6%98%AF3/"/>
-      <url>/wrnlm/%E8%BF%99%E6%98%AF3/</url>
+      <link href="/wrnlm/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
+      <url>/wrnlm/%E7%AC%AC%E4%B8%80%E7%AF%87/</url>
       
-        <content type="html"><![CDATA[<div class="video-container">[up主专用，视频内嵌代码贴在这]</div><style>.video-container {    position: relative;    width: 100%;    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */}.video-container iframe {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;}</style>]]></content>
+        <content type="html"><![CDATA[<div class="video-container">[up主专用，视频内嵌代码贴在这]</div><style>.video-container {    position: relative;    width: 100%;    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */}.video-container iframe {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;}</style><h1 id="我的第一个文章"><a href="#我的第一个文章" class="headerlink" title="我的第一个文章"></a>我的第一个文章</h1><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><h3 id="更多功能"><a href="#更多功能" class="headerlink" title="更多功能"></a>更多功能</h3><p>新建文章<br>新建博文命令<br>hexo new 这是一篇新的博文<br>新建标签页命令<br>hexo new page 新建的标签页<br>文章置顶<br>安装插件<br>npm install hexo-generator-topindex –save<br>设置置顶<br>给需要置顶的文章加入top参数，如下：</p><hr><p>title: 每天一个linux命令<br>date: 2017-01-23 11:41:48<br>top: 1<br>categories:</p><ul><li>运维<br>tags:</li><li>linux命令</li></ul><hr><p>如果存在多个置顶文章，top后的参数越大，越靠前。</p><p>开启本地搜索<br>安装插件<br>你需要安装 hexo-generator-search，根据它的文档去做相应配置</p><p>npm install hexo-generator-search –save<br>设置主题配置文件<br>local_search:<br>  enable: true<br>  preload: false<br>  CDN:<br>参数解释<br>enable是否开启本地搜索<br>preload预加载，开启后，进入网页后会自动加载搜索文件。关闭时，只有点击搜索按钮后，才会加载搜索文件<br>CDN搜索文件的 CDN 地址（默认使用的本地链接）<br>添加任意文件<br>例如当我们想在网站根目录添加ads.txt文件，来通过站长验证时，我们只需要在&#x2F;source文件夹下放置该文件即可。</p><p>参考资料<br><a href="https://docs.anheyu.com/initall.html">https://docs.anheyu.com/initall.html</a><br><a href="https://www.fomal.cc/posts/4aa2d85f.html">https://www.fomal.cc/posts/4aa2d85f.html</a><br><a href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu/blob/dev/README.md?plain=1">https://github.com/anzhiyu-c/hexo-theme-anzhiyu/blob/dev/README.md?plain=1</a><br><a href="https://blog.csdn.net/COCO56/article/details/103840966">https://blog.csdn.net/COCO56/article/details/103840966</a></p>]]></content>
       
       
       
@@ -18,8 +18,8 @@
     
     <entry>
       <title>坎篇啦</title>
-      <link href="/wrnlm/%E8%BF%99%E4%B8%AA%E6%98%AF%E7%AF%87/"/>
-      <url>/wrnlm/%E8%BF%99%E4%B8%AA%E6%98%AF%E7%AF%87/</url>
+      <link href="/wrnlm/%E5%9D%8E%E7%AF%87/"/>
+      <url>/wrnlm/%E5%9D%8E%E7%AF%87/</url>
       
         <content type="html"><![CDATA[<h1 id="正能量"><a href="#正能量" class="headerlink" title="正能量"></a>正能量</h1><h2 id="看篇"><a href="#看篇" class="headerlink" title="看篇"></a>看篇</h2><h3 id="ttps-www-pornhub-com-video-search-search-fucked-pronhup"><a href="#ttps-www-pornhub-com-video-search-search-fucked-pronhup" class="headerlink" title="ttps:&#x2F;&#x2F;www.pornhub.com/video/search?search=fucked+pronhup"></a>ttps:&#x2F;&#x2F;<a href="http://www.pornhub.com/video/search?search=fucked+pronhup">www.pornhub.com/video/search?search=fucked+pronhup</a></h3><div class="video-container">[up主专用，视频内嵌代码贴在这]</div><style>.video-container {    position: relative;    width: 100%;    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */}.video-container iframe {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;}</style>]]></content>
       
@@ -31,8 +31,8 @@
     
     <entry>
       <title>第二篇</title>
-      <link href="/wrnlm/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%8D%9A%E6%96%87/"/>
-      <url>/wrnlm/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%8D%9A%E6%96%87/</url>
+      <link href="/wrnlm/%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
+      <url>/wrnlm/%E7%AC%AC%E4%BA%8C%E7%AF%87/</url>
       
         <content type="html"><![CDATA[<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/Qss3XdMsHKM?si=nxq2fQ2MeKA4o250" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><style>.video-container {    position: relative;    width: 100%;    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */}.video-container iframe {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;}</style>]]></content>
       
