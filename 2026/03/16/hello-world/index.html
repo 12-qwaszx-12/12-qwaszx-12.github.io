@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidmbzV7-S0mdFetKbIGAV3O" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidGrvfx0hD25F9CDyt6oNMN" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -205,17 +205,15 @@
       loadExternalResource(cdnPath + "/waifu.css", "css"),
       loadExternalResource(cdnPath + "/live2d-sdk.js", "js"),
       loadExternalResource(cdnPath + "/Core/live2dcubismcore.js", "js"),
-      loadExternalResource(cdnPath + "/waifu-tips.js", "js"),
-      loadExternalResource(cdnPath + "/waifu.js", "js") // ⭐ 必须加
+      //loadExternalResource(cdnPath + "/waifu-tips.js", "js"),//
     ]).then(() => {
       // ---------- 4. 初始化 Widget ----------
       initWidget({
-        waifuPath: "/live2d/xinnong/xinnong_6.model3.json", // 模型 JSON
-        cdnPath: "/live2d/xinnong/",                        // 模型资源目录
+        waifuPath: "/live2d/xinnong/xinnong_6.model3.json",
+        cdnPath: "/live2d/xinnong/",
         tools: ["hitokoto","switch-model","photo","info","quit"],
         dragEnable: true,
-        dragDirection: ["x","y"],
-        switchType: "order"
+        dragDirection: ["x","y"]
       });
     }).catch(err => {
       console.error("Live2D 资源加载失败:", err);
