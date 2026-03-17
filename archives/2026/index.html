@@ -155,23 +155,50 @@
   </div>
 </footer>
 
-<script>
-  // ---------- 1. 定义 CDN 路径 ----------
-  const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
 
-  // ---------- 2. 异步加载外部资源 ----------
+<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // GitHub Raw URL 前缀
+  const githubRaw = "https://raw.githubusercontent.com/12-qwaszx-12/xinnong/main/";
+
+  const config = {
+    tools: ["hitokoto","switch-model","photo","info","quit"],  // 工具栏
+    drag: { enable: true, direction: ["x","y"] }               // 拖拽
+  };
+
+  // 加载外部资源 (CSS/JS)
   function loadExternalResource(url, type) {
     return new Promise((resolve, reject) => {
       let tag;
-      if (type === "css") {
+      if(type === "css") {
         tag = document.createElement("link");
         tag.rel = "stylesheet";
         tag.href = url;
-      } else if (type === "js") {
+      } else if(type === "js") {
         tag = document.createElement("script");
         tag.src = url;
       }
-      if (tag) {
+      if(tag){
         tag.onload = () => resolve(url);
         tag.onerror = () => reject(url);
         document.head.appendChild(tag);
@@ -179,25 +206,23 @@
     });
   }
 
-  // ---------- 3. 加载资源并初始化 Live2D ----------
-  if (screen.width >= 768) {
+  // 桌面端才加载
+  if(screen.width >= 768){
     Promise.all([
-      loadExternalResource(cdnPath + "/waifu.css", "css"),
-      loadExternalResource(cdnPath + "/live2d-sdk.js", "js"),
-      loadExternalResource(cdnPath + "/Core/live2dcubismcore.js", "js"),
-      //loadExternalResource(cdnPath + "/waifu-tips.js", "js"),//
+      loadExternalResource("https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu.css", "css"),
+      loadExternalResource("https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/live2d-sdk.js", "js"),
+      loadExternalResource("https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/Core/live2dcubismcore.js", "js"),
+      loadExternalResource("https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.js", "js")
     ]).then(() => {
-      // ---------- 4. 初始化 Widget ----------
+      // 初始化 Widget
       initWidget({
-        waifuPath: "/live2d/xinnong/xinnong_6.model3.json",
-        cdnPath: "/live2d/xinnong/",
-        tools: ["hitokoto","switch-model","photo","info","quit"],
-        dragEnable: true,
-        dragDirection: ["x","y"]
+        waifuPath: githubRaw + "xinnong_6.model3.json",  // 模型 JSON
+        cdnPath: githubRaw,                               // 模型所在目录
+        tools: config.tools,
+        dragEnable: config.drag.enable,
+        dragDirection: config.drag.direction
       });
-    }).catch(err => {
-      console.error("Live2D 资源加载失败:", err);
-    });
+    }).catch(err => console.error("Live2D 资源加载失败:", err));
   }
 </script>
     </div>
@@ -228,5 +253,5 @@
 
 
   </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
