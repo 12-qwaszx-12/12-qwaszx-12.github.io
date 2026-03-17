@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuid2Gq9i8joedO9pKANTLaoO" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidV6B-Ph4n2QUCJ1wK_gdml" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -207,15 +207,14 @@
       loadExternalResource(config.path.live2dSdkPath, "js"),
       loadExternalResource(config.path.tipsJsPath, "js")
     ]).then(() => {
-      initWidget({
-        waifuPath: config.path.tipsJsonPath,
-        cdnPath: config.path.modelPath,
-        model: "xinnong_6.model3.json"
+    initWidget({
+        cdnPath: config.path.modelPath,   // 模型目录
+        model: "xinnong_6.model3.json",   // <-- 改成你的实际文件名
         tools: config.tools,
         dragEnable: config.drag.enable,
         dragDirection: config.drag.direction,
         switchType: config.switchType
-      });
+});
     });
   }
 
