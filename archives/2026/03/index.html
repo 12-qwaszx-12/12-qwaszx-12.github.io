@@ -155,13 +155,13 @@
   </div>
 </footer>
 
-<script>
+  <script>
   const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
   const config = {
     // 资源路径
     path: {
       homePath: "/",
-      modelPath: cdnPath + "/source/xinnong/",
+      modelPath: cdnPath + "/source/live2d/xinnong/",
       cssPath: cdnPath + "/waifu.css",
       tipsJsonPath: cdnPath + "/waifu-tips.json",
       tipsJsPath: cdnPath + "/waifu-tips.js",
@@ -189,8 +189,7 @@
     ]).then(() => {
       initWidget({
         waifuPath: config.path.tipsJsonPath,
-        cdnPath: /live2d/xinnong/,
-         model: "xinnong_6.model.json",
+        cdnPath: config.path.modelPath,
         tools: config.tools,
         dragEnable: config.drag.enable,
         dragDirection: config.drag.direction,
