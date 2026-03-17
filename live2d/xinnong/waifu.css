@@ -1,44 +1,44 @@
 /* ===== Live2D 模型容器 ===== */
 #live2d {
-  position: fixed;      /* 固定在页面上 */
-  bottom: 0;            /* 靠底部 */
-  right: 0;             /* 靠右边 */
-  width: 300px;         /* 模型宽度，可根据需要调整 */
-  height: 600px;        /* 模型高度，可根据需要调整 */
-  z-index: 9999;        /* 确保在最上层 */
-  pointer-events: none; /* 不阻挡页面点击 */
+  position: fixed;    /* 固定在页面上 */
+  bottom: 0;          /* 靠底部 */
+  right: 0;           /* 靠右边 */
+  width: 300px;       /* 模型宽度，可根据需要调整 */
+  height: 600px;      /* 模型高度，可根据需要调整 */
+  z-index: 9999;      /* 保证在最上层 */
+  pointer-events: none; /* 不阻挡鼠标事件 */
 }
 
 /* ===== 提示框 ===== */
 #live2d-tips {
   position: fixed;
-  bottom: 610px;        /* 提示框在模型上方 */
+  bottom: 610px;      /* 提示框在模型上方 */
   right: 0;
-  max-width: 250px;     /* 最大宽度 */
-  background: rgba(255, 255, 210, 0.95);
+  max-width: 250px;   /* 最大宽度 */
+  background: rgba(255,255,210,0.95);
   border: 1px solid #ccc;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 13px;
   color: #333;
   z-index: 9998;
-  pointer-events: none; /* 不阻挡鼠标 */
+  pointer-events: none;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 
-/* ===== 工具栏图标 ===== */
+/* ===== 工具栏 ===== */
 #live2d-tools {
   position: fixed;
   bottom: 0;
-  right: 310px;         /* 离模型一定距离 */
+  right: 310px;
   display: flex;
   flex-direction: column;
   z-index: 9999;
 }
 
 #live2d-tools img {
-  width: 32px;          /* 工具栏图标大小 */
+  width: 32px;
   height: 32px;
   margin: 4px 0;
   cursor: pointer;
@@ -46,7 +46,7 @@
 }
 
 #live2d-tools img:hover {
-  transform: scale(1.2); /* 鼠标悬停放大效果 */
+  transform: scale(1.2);
 }
 
 /* ===== 移动端隐藏 ===== */
