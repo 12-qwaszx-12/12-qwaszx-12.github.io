@@ -177,54 +177,47 @@
   </div>
 </footer>
 
+<!-- Live2D 看板娘 - 开始 -->
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
 <script>
-  // GitHub Raw URL 前缀
-  const githubRaw = "https://raw.githubusercontent.com/12-qwaszx-12/xinnong/main/";
-
-  const config = {
-    tools: ["hitokoto","switch-model","photo","info","quit"],  // 工具栏
-    drag: { enable: true, direction: ["x","y"] }               // 拖拽
-  };
-
-  // 加载外部资源 (CSS/JS)
-  function loadExternalResource(url, type) {
-    return new Promise((resolve, reject) => {
-      let tag;
-      if(type === "css") {
-        tag = document.createElement("link");
-        tag.rel = "stylesheet";
-        tag.href = url;
-      } else if(type === "js") {
-        tag = document.createElement("script");
-        tag.src = url;
+  // 初始化 Live2D 看板娘
+  L2Dwidget.init({
+    // 模型配置
+    model: {
+      // 指向你的 model3.json 文件（通过 jsDelivr CDN）
+      jsonPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json",
+    },
+    // 显示配置
+    display: {
+      position: "right",  // 显示位置：left/right
+      width: 150,         // 宽度（像素）
+      height: 300,        // 高度（像素）
+      hOffset: 0,         // 水平偏移（像素）
+      vOffset: -20,       // 垂直偏移（像素）
+    },
+    // 移动端配置
+    mobile: {
+      show: true,         // 是否在移动端显示
+      scale: 0.5,         // 移动端缩放比例
+    },
+    // 交互配置
+    react: {
+      opacity: 0.8,       // 鼠标悬停透明度（0~1）
+    },
+    // 对话配置（可选）
+    dialog: {
+      // 开启对话功能
+      enable: true,
+      // 对话内容（可自定义）
+      script: {
+        '点击和我互动': '嗨，你好呀！',
+        '你叫什么名字？': '我是 Live2D 看板娘~',
       }
-      if(tag){
-        tag.onload = () => resolve(url);
-        tag.onerror = () => reject(url);
-        document.head.appendChild(tag);
-      }
-    });
-  }
-
-  // 桌面端才加载
-  if(screen.width >= 768){
-    Promise.all([
-      loadExternalResource("https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu.css", "css"),
-      loadExternalResource("https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/live2d-sdk.js", "js"),
-      loadExternalResource("https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/Core/live2dcubismcore.js", "js"),
-      loadExternalResource("https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.js", "js")
-    ]).then(() => {
-      // 初始化 Widget
-      initWidget({
-        waifuPath: githubRaw + "xinnong_6.model3.json",  // 模型 JSON
-        cdnPath: githubRaw,                               // 模型所在目录
-        tools: config.tools,
-        dragEnable: config.drag.enable,
-        dragDirection: config.drag.direction
-      });
-    }).catch(err => console.error("Live2D 资源加载失败:", err));
-  }
+    }
+  });
 </script>
+<!-- Live2D 看板娘 - 结束 -->
+
     </div>
     <nav id="mobile-nav">
   
