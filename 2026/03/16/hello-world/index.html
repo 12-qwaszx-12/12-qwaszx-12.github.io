@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidofkJhPuL48VVJHo7fSco7" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidvtIxFBDCf3ETz5kiw3LU-" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -197,46 +197,46 @@
   </div>
 </footer>
 
-<!-- Live2D 看板娘 - 开始 -->
+<!-- Live2D 看板娘 - 完整集成代码 -->
 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
 <script>
   // 初始化 Live2D 看板娘
   L2Dwidget.init({
-    // 模型配置
+    // 模型配置（必须替换为你的 CDN 链接）
     model: {
-      // 指向你的 model3.json 文件（通过 jsDelivr CDN）
       jsonPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json",
     },
     // 显示配置
     display: {
-      position: "right",  // 显示位置：left/right
-      width: 150,         // 宽度（像素）
-      height: 300,        // 高度（像素）
-      hOffset: 0,         // 水平偏移（像素）
-      vOffset: -20,       // 垂直偏移（像素）
+      position: "right",      // 显示位置：left/right
+      width: 150,             // 宽度（像素）
+      height: 300,            // 高度（像素）
+      hOffset: 0,             // 水平偏移（像素）
+      vOffset: -20,           // 垂直偏移（像素）
+      scale: 1,               // 缩放比例
+      opacity: 0.8,           // 透明度
     },
     // 移动端配置
     mobile: {
-      show: true,         // 是否在移动端显示
-      scale: 0.5,         // 移动端缩放比例
+      show: true,             // 是否在移动端显示
+      scale: 0.5,             // 移动端缩放比例
     },
     // 交互配置
     react: {
-      opacity: 0.8,       // 鼠标悬停透明度（0~1）
+      opacity: 0.8,           // 鼠标悬停透明度
+      hoverDelay: 100,        // 悬停延迟（毫秒）
     },
     // 对话配置（可选）
     dialog: {
-      // 开启对话功能
-      enable: true,
-      // 对话内容（可自定义）
+      enable: true,           // 开启对话功能
       script: {
-        '点击和我互动': '嗨，你好呀！',
-        '你叫什么名字？': '我是 Live2D 看板娘~',
+        "点击和我互动": "嗨，你好呀！",
+        "你叫什么名字？": "我是小农（xinnong_6）~",
+        "今天天气怎么样？": "晴空万里，适合写代码！",
       }
     }
   });
 </script>
-<!-- Live2D 看板娘 - 结束 -->
 
     </div>
     <nav id="mobile-nav">
