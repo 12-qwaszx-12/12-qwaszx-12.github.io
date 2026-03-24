@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidr2bgPW0HcYkCWAaGlw1nY" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidt17h1hB7jjdm1OEo_StaC" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -197,19 +197,36 @@
   </div>
 </footer>
 
-<!-- Live2D 看板娘脚本 -->
+<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Live2D Widget ===== -->
+<script src="https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/live2d-sdk.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/Core/live2dcubismcore.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu.js"></script>
+
 <script>
-const githubRaw = "https://github.com/12-qwaszx-12/xinnong";
+  // GitHub Raw URL
+  const githubRaw = "https://raw.githubusercontent.com/12-qwaszx-12/xinnong/main/";
 
-initWidget({
-  waifuPath: githubRaw + "xinnong_6.model3.json",
-  cdnPath: githubRaw,
-  tools: ["hitokoto","switch-model","photo","info","quit"],
-  dragEnable: true,
-  dragDirection: ["x","y"]
-});
+  // 初始化 Live2D Widget
+  initWidget({
+    waifuPath: githubRaw + "xinnong_6.model3.json",  // 模型 JSON
+    cdnPath: githubRaw,                               // 模型目录
+    tools: ["hitokoto","switch-model","photo","info","quit"], // 工具栏
+    dragEnable: true,                                  // 是否可拖拽
+    dragDirection: ["x","y"]                           // 可拖拽方向
+  });
 </script>
-
     </div>
     <nav id="mobile-nav">
   
