@@ -158,16 +158,75 @@
   </div>
 </footer>
 
+<!-- PIXI & Cubism 库 -->
 <script src="https://unpkg.com/pixi.js@6.5.8/dist/browser/pixi.min.js"></script>
 <script src="/live2d/core/live2dcubismcore.js"></script>
 <script src="/live2d/pixi/cubism4.js"></script>
+
+<!-- waifu.js -->
 <script src="https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/waifu.js"></script>
 
+<!-- 初始化模型 + 固定大小 + 居中 + 拖动 -->
 <script>
   initWidget({
     waifuPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json",
-    scale: 0.25 // 可调大小
+    scale: 0.25 // 自定义模型大小
   });
+
+  setTimeout(() => {
+    const canvas = document.getElementById("live2d");
+    if (!canvas) return;
+
+    // ----------------- 初始居中 -----------------
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    const canvasWidth = canvas.width * 0.25;   // scale 与 initWidget 一致
+    const canvasHeight = canvas.height * 0.25;
+
+    // 居中
+    canvas.style.position = "fixed";
+    canvas.style.left = (screenWidth - canvasWidth) / 2 + "px";
+    canvas.style.top = (screenHeight - canvasHeight) / 2 + "px";
+    canvas.style.transform = "none";  // 不用 translate
+    canvas.style.cursor = "grab";
+    canvas.style.touchAction = "none";
+    canvas.style.zIndex = "9999";
+
+    // ----------------- 拖动 -----------------
+    let dragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    canvas.addEventListener('mousedown', e => {
+      dragging = true;
+      canvas.style.cursor = 'grabbing';
+      const rect = canvas.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+    });
+
+    window.addEventListener('mousemove', e => {
+      if (!dragging) return;
+      canvas.style.left = e.clientX - offsetX + "px";
+      canvas.style.top = e.clientY - offsetY + "px";
+    });
+
+    window.addEventListener('mouseup', e => {
+      dragging = false;
+      canvas.style.cursor = 'grab';
+    });
+
+    // ----------------- 刷新后保持大小 -----------------
+    window.addEventListener('resize', () => {
+      // 不自动缩放，只重新居中初始位置
+      if (!dragging) {
+        canvas.style.left = (window.innerWidth - canvasWidth) / 2 + "px";
+        canvas.style.top = (window.innerHeight - canvasHeight) / 2 + "px";
+      }
+    });
+
+  }, 500);
 </script>
     </div>
     <nav id="mobile-nav">
