@@ -158,13 +158,43 @@
   </div>
 </footer>
 
-<!-- ===== Live2D（你自己的模型）===== -->
-<script src="https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/waifu.js"></script>
+<!-- PIXI -->
+<script src="https://unpkg.com/pixi.js@6.5.8/dist/browser/pixi.min.js"></script>
+
+<!-- Cubism Core -->
+<script src="/live2d/core/live2dcubismcore.js"></script>
+
+<!-- Cubism Renderer -->
+<script src="/live2d/pixi/cubism4.js"></script>
 
 <script>
-initWidget({
-  waifuPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json"
-});
+(async function () {
+
+  const canvas = document.createElement("canvas");
+  canvas.id = "live2d";
+  canvas.style.position = "fixed";
+  canvas.style.right = "0";
+  canvas.style.bottom = "0";
+  canvas.style.zIndex = "9999";
+  document.body.appendChild(canvas);
+
+  const app = new PIXI.Application({
+    view: canvas,
+    resizeTo: window,
+    transparent: true
+  });
+
+  const model = await PIXI.live2d.Live2DModel.from(
+    "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json"
+  );
+
+  model.scale.set(0.25);
+  model.x = window.innerWidth - 200;
+  model.y = window.innerHeight - 50;
+
+  app.stage.addChild(model);
+
+})();
 </script>
     </div>
     <nav id="mobile-nav">
