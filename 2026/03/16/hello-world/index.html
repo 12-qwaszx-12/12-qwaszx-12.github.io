@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidTf6u0EeATvYYtZQE8gojn" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuid3On0TNPwT1JYzLs_XFUtN" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -188,6 +188,7 @@
 
 <!-- 初始化模型 + 固定大小 + 居中 + 拖动 -->
 <script>
+  // 初始化模型
   initWidget({
     waifuPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json",
     scale: 0.25 // 自定义模型大小
@@ -197,18 +198,14 @@
     const canvas = document.getElementById("live2d");
     if (!canvas) return;
 
-    // ----------------- 初始居中 -----------------
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-
+    // ----------------- 固定大小 + 居中 -----------------
     const canvasWidth = canvas.width * 0.25;   // scale 与 initWidget 一致
     const canvasHeight = canvas.height * 0.25;
 
-    // 居中
     canvas.style.position = "fixed";
-    canvas.style.left = (screenWidth - canvasWidth) / 2 + "px";
-    canvas.style.top = (screenHeight - canvasHeight) / 2 + "px";
-    canvas.style.transform = "none";  // 不用 translate
+    canvas.style.left = (window.innerWidth - canvasWidth) / 2 + "px";
+    canvas.style.top = (window.innerHeight - canvasHeight) / 2 + "px";
+    canvas.style.transform = "none";  // 不使用 translate
     canvas.style.cursor = "grab";
     canvas.style.touchAction = "none";
     canvas.style.zIndex = "9999";
@@ -237,16 +234,16 @@
       canvas.style.cursor = 'grab';
     });
 
-    // ----------------- 刷新后保持大小 -----------------
+    // ----------------- 刷新或窗口缩放 -----------------
     window.addEventListener('resize', () => {
-      // 不自动缩放，只重新居中初始位置
+      // 不改变大小，只重新居中初始位置
       if (!dragging) {
         canvas.style.left = (window.innerWidth - canvasWidth) / 2 + "px";
         canvas.style.top = (window.innerHeight - canvasHeight) / 2 + "px";
       }
     });
 
-  }, 500);
+  }, 500); // 延迟确保模型加载完成
 </script>
     </div>
     <nav id="mobile-nav">
