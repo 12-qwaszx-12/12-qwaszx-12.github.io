@@ -215,20 +215,19 @@
   </div>
 </footer>
 
-<!-- ===== Live2D Widget ===== -->
+<!-- Live2D 核心 -->
 <script src="https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/live2d-sdk.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/Core/live2dcubismcore.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu.js"></script>
 
 <script>
-  // 初始化你的 GitHub 模型
-  initWidget({
-    waifuPath: "https://raw.githubusercontent.com/12-qwaszx-12/xinnong/main/xinnong_6.model3.json",
-    cdnPath: "https://raw.githubusercontent.com/12-qwaszx-12/xinnong/main/",
-    tools: ["hitokoto","switch-model","photo","info","quit"],
-    dragEnable: true,
-    dragDirection: ["x","y"]
-  });
+initWidget({
+  waifuPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json",
+  cdnPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/",
+  tools: ["switch-model","photo","info","quit"],
+  dragEnable: true,
+  dragDirection: ["x","y"]
+});
 </script>
     </div>
     <nav id="mobile-nav">
