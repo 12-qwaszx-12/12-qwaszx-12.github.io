@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidMdgAQXVp2GsCSVHp5aTD1" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidnH-gAEW9PNtI5LiMhuJHT" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -304,5 +304,74 @@ setTimeout(resizeLive2D, 500); // 等模型加载完成后再缩放
 
 
   </div>
+  <!-- Live2D 看板娘 -->
+<div id="live2d-container"></div>
+
+<!-- PIXI & Cubism -->
+<script src="https://unpkg.com/pixi.js@6.5.8/dist/browser/pixi.min.js"></script>
+<script src="/live2d/core/live2dcubismcore.js"></script>
+<script src="/live2d/pixi/cubism4.js"></script>
+
+<!-- waifu.js -->
+<script src="https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/waifu.js"></script>
+
+<script>
+window.addEventListener('load', () => {
+  const container = document.getElementById('live2d-container');
+  
+  // 初始化模型
+  initWidget({
+    waifuPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json",
+    container: container,
+    scale: 1,
+    draggable: true
+  });
+
+  // 样式
+  container.style.position = 'fixed';
+  container.style.right = '0';
+  container.style.bottom = '0';
+  container.style.width = '300px';
+  container.style.height = '500px';
+  container.style.zIndex = '2147483647';
+  container.style.cursor = 'grab';
+
+  // 拖动逻辑
+  let dragging = false, offsetX = 0, offsetY = 0;
+  container.addEventListener('mousedown', e => {
+    dragging = true;
+    container.style.cursor = 'grabbing';
+    const rect = container.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    container.style.left = (e.clientX - offsetX) + 'px';
+    container.style.top = (e.clientY - offsetY) + 'px';
+    container.style.right = 'auto';
+    container.style.bottom = 'auto';
+  });
+
+  window.addEventListener('mouseup', () => {
+    dragging = false;
+    container.style.cursor = 'grab';
+  });
+
+  // 自动缩放
+  function resizeLive2D() {
+    const winW = window.innerWidth;
+    const winH = window.innerHeight;
+    const rect = container.getBoundingClientRect();
+    const scale = Math.min(winW / rect.width, winH / rect.height, 1);
+    container.style.transform = `scale(${scale})`;
+    container.style.transformOrigin = 'top left';
+  }
+
+  window.addEventListener('resize', resizeLive2D);
+  setTimeout(resizeLive2D, 500);
+});
+</script>
 </body>
 </html>
