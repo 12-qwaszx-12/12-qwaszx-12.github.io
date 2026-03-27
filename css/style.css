@@ -1344,9 +1344,3 @@ pre .javascript .function {
   margin-right: 5px;
   display: inline-block;
 }
-#live2d {
-  position: fixed !important;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-}

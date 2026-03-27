@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuid3On0TNPwT1JYzLs_XFUtN" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidMdgAQXVp2GsCSVHp5aTD1" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -178,7 +178,40 @@
   </div>
 </footer>
 
-<!-- PIXI & Cubism 库 -->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Live2D 看板娘</title>
+<style>
+  body { margin:0; overflow:hidden; }
+
+  /* 容器固定在右下角，确保最顶层 */
+  #live2d-container {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 300px;     /* 初始宽度，可根据模型调整 */
+    height: 500px;    /* 初始高度，可根据模型调整 */
+    z-index: 999999;  /* 高于网页其他元素 */
+    cursor: grab;
+    touch-action: none;
+  }
+
+  #live2d-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: auto;  /* 确保鼠标事件可以触发 */
+    display: block !important;
+  }
+</style>
+</head>
+<body>
+
+<div id="live2d-container"></div>
+
+<!-- PIXI & Cubism -->
 <script src="https://unpkg.com/pixi.js@6.5.8/dist/browser/pixi.min.js"></script>
 <script src="/live2d/core/live2dcubismcore.js"></script>
 <script src="/live2d/pixi/cubism4.js"></script>
@@ -186,65 +219,63 @@
 <!-- waifu.js -->
 <script src="https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/waifu.js"></script>
 
-<!-- 初始化模型 + 固定大小 + 居中 + 拖动 -->
 <script>
-  // 初始化模型
-  initWidget({
-    waifuPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json",
-    scale: 0.25 // 自定义模型大小
-  });
+const container = document.getElementById('live2d-container');
 
-  setTimeout(() => {
-    const canvas = document.getElementById("live2d");
-    if (!canvas) return;
+// 初始化 waifu.js
+initWidget({
+  waifuPath: "https://cdn.jsdelivr.net/gh/12-qwaszx-12/xinnong@main/xinnong_6.model3.json",
+  container: container,
+  scale: 1,
+  draggable: true
+});
 
-    // ----------------- 固定大小 + 居中 -----------------
-    const canvasWidth = canvas.width * 0.25;   // scale 与 initWidget 一致
-    const canvasHeight = canvas.height * 0.25;
+// 拖动逻辑
+let dragging = false;
+let offsetX = 0;
+let offsetY = 0;
 
-    canvas.style.position = "fixed";
-    canvas.style.left = (window.innerWidth - canvasWidth) / 2 + "px";
-    canvas.style.top = (window.innerHeight - canvasHeight) / 2 + "px";
-    canvas.style.transform = "none";  // 不使用 translate
-    canvas.style.cursor = "grab";
-    canvas.style.touchAction = "none";
-    canvas.style.zIndex = "9999";
+container.addEventListener('mousedown', e => {
+  dragging = true;
+  container.style.cursor = 'grabbing';
+  const rect = container.getBoundingClientRect();
+  offsetX = e.clientX - rect.left;
+  offsetY = e.clientY - rect.top;
+  container.style.zIndex = 1000000;  // 拖动时置顶
+});
 
-    // ----------------- 拖动 -----------------
-    let dragging = false;
-    let offsetX = 0;
-    let offsetY = 0;
+window.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  container.style.left = e.clientX - offsetX + 'px';
+  container.style.top = e.clientY - offsetY + 'px';
+  container.style.right = 'auto';
+  container.style.bottom = 'auto';
+});
 
-    canvas.addEventListener('mousedown', e => {
-      dragging = true;
-      canvas.style.cursor = 'grabbing';
-      const rect = canvas.getBoundingClientRect();
-      offsetX = e.clientX - rect.left;
-      offsetY = e.clientY - rect.top;
-    });
+window.addEventListener('mouseup', () => {
+  dragging = false;
+  container.style.cursor = 'grab';
+});
 
-    window.addEventListener('mousemove', e => {
-      if (!dragging) return;
-      canvas.style.left = e.clientX - offsetX + "px";
-      canvas.style.top = e.clientY - offsetY + "px";
-    });
+// 自动缩放防止模型跑出屏幕
+function resizeLive2D() {
+  const winW = window.innerWidth;
+  const winH = window.innerHeight;
+  const rect = container.getBoundingClientRect();
 
-    window.addEventListener('mouseup', e => {
-      dragging = false;
-      canvas.style.cursor = 'grab';
-    });
+  const maxScaleX = winW / rect.width;
+  const maxScaleY = winH / rect.height;
+  const scale = Math.min(maxScaleX, maxScaleY, 1);
 
-    // ----------------- 刷新或窗口缩放 -----------------
-    window.addEventListener('resize', () => {
-      // 不改变大小，只重新居中初始位置
-      if (!dragging) {
-        canvas.style.left = (window.innerWidth - canvasWidth) / 2 + "px";
-        canvas.style.top = (window.innerHeight - canvasHeight) / 2 + "px";
-      }
-    });
+  container.style.transform = `scale(${scale})`;
+}
 
-  }, 500); // 延迟确保模型加载完成
+window.addEventListener('resize', resizeLive2D);
+setTimeout(resizeLive2D, 500); // 等模型加载完成后再缩放
 </script>
+
+</body>
+</html>
     </div>
     <nav id="mobile-nav">
   
