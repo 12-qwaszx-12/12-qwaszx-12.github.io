@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuidvF_sNsXkf71zYTI6Z8tmL" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/16/hello-world/" data-id="cuid6ztgEXPlfqCGdwLpIIspn" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -190,8 +190,8 @@
         position: fixed;
         right: 20px;
         bottom: 20px;
-        width: 550px;
-        height: 650px;
+        width: 400px;
+        height: 200px;
         z-index: 9999;
         pointer-events: auto;
         overflow: hidden;
@@ -199,30 +199,143 @@
         background: transparent;
         cursor: move;
         box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        /* 提升渲染质量 */
         image-rendering: crisp-edges;
         image-rendering: -webkit-optimize-contrast;
     }
     
-    .waifu-hint {
+    /* 台词气泡样式 */
+    .speech-bubble {
         position: fixed;
-        right: 30px;
-        bottom: 680px;
-        z-index: 10000;
-        padding: 4px 10px;
-        font-size: 11px;
-        background: rgba(0,0,0,0.6);
-        color: white;
-        border-radius: 20px;
-        backdrop-filter: blur(4px);
+        right: 430px;
+        bottom: 230px;
+        max-width: 250px;
+        min-width: 120px;
+        background: white;
+        border-radius: 18px;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: #333;
+        font-family: system-ui, -apple-system, sans-serif;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        z-index: 10001;
+        opacity: 0;
+        transition: opacity 0.3s ease;
         pointer-events: none;
+        border: 1px solid #e0e0e0;
+    }
+    
+    .speech-bubble::before {
+        content: '';
+        position: absolute;
+        right: -8px;
+        bottom: 15px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid white;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+    }
+    
+    /* 移动端调整 */
+    @media (max-width: 768px) {
+        .speech-bubble {
+            right: 350px;
+            bottom: 180px;
+            max-width: 180px;
+            font-size: 12px;
+            padding: 8px 12px;
+        }
     }
 </style>
 
-<div class="waifu-hint">💡 拖拽移动窗口</div>
+<div id="speech-bubble" class="speech-bubble"></div>
 
 <script>
 (function() {
+    // ========== 台词库 ==========
+    const speechList = [
+        // 欢迎语
+        "欢迎来到我的博客！✨",
+        "你好呀！很高兴见到你~",
+        "今天过得怎么样？",
+        "要常来看看我哦！",
+        "辛苦啦，休息一下吧~",
+        
+        // 问候语
+        "早上好！☀️",
+        "下午好呀~",
+        "晚上好，要注意休息哦！🌙",
+        "周末愉快！🎉",
+        
+        // 互动语
+        "喜欢我的新衣服吗？",
+        "拖拽我可以移动到任何位置~",
+        "要不要一起玩游戏？",
+        "今天想聊点什么呢？",
+        
+        // 可爱语
+        "嘿嘿~ 😊",
+        "加油！你是最棒的！💪",
+        "要开心每一天！",
+        "注意保暖哦~",
+        "记得按时吃饭！🍚",
+        
+        // 随机语
+        "悄悄告诉你，这里有很多有趣的内容~",
+        "有什么问题可以随时问我！",
+        "我正在看着你哦 👀",
+        "要经常来陪我玩呀！",
+        "今天的天气真不错~"
+    ];
+    
+    // 防止重复说话的标志
+    let isSpeaking = false;
+    let hoverTimeout = null;
+    
+    // 获取随机台词
+    function getRandomSpeech() {
+        const randomIndex = Math.floor(Math.random() * speechList.length);
+        return speechList[randomIndex];
+    }
+    
+    // 显示台词气泡
+    let speechTimeout = null;
+    const bubble = document.getElementById('speech-bubble');
+    
+    function showSpeech(text, duration = 4000) {
+        if (!bubble) return;
+        
+        // 清除之前的定时器
+        if (speechTimeout) clearTimeout(speechTimeout);
+        
+        // 设置文字并显示
+        bubble.textContent = text;
+        bubble.style.opacity = '1';
+        
+        // 自动隐藏
+        speechTimeout = setTimeout(() => {
+            bubble.style.opacity = '0';
+        }, duration);
+    }
+    
+    // 鼠标悬停时说话（带防抖，避免频繁触发）
+    function onMouseEnter() {
+        if (hoverTimeout) clearTimeout(hoverTimeout);
+        
+        hoverTimeout = setTimeout(() => {
+            const text = getRandomSpeech();
+            showSpeech(text, 3500);
+        }, 300); // 悬停300ms后说话，避免误触发
+    }
+    
+    // 鼠标离开时清除待执行的说话
+    function onMouseLeave() {
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = null;
+        }
+    }
+    
     window.addEventListener('load', async function() {
         try {
             console.log('🚀 开始加载看板娘...');
@@ -257,11 +370,11 @@
             canvas.style.pointerEvents = 'auto';
             container.appendChild(canvas);
             
-            // 获取设备像素比，提高清晰度
+            // 获取设备像素比
             const pixelRatio = Math.min(window.devicePixelRatio || 1, 2.5);
             console.log(`📱 设备像素比: ${pixelRatio}`);
             
-            // 创建 PIXI 应用 - 提高分辨率设置
+            // 创建 PIXI 应用
             const app = new PIXI.Application({
                 view: canvas,
                 width: containerWidth,
@@ -269,9 +382,9 @@
                 transparent: true,
                 backgroundColor: 0x000000,
                 backgroundAlpha: 0,
-                antialias: true,           // 开启抗锯齿
-                resolution: pixelRatio,     // 使用设备像素比
-                autoDensity: true,          // 自动处理密度
+                antialias: true,
+                resolution: pixelRatio,
+                autoDensity: true,
                 clearBeforeRender: true,
                 preserveDrawingBuffer: false
             });
@@ -283,7 +396,6 @@
             const model = await PIXI.live2d.Live2DModel.from(
                 'https://raw.githubusercontent.com/12-qwaszx-12/xinnong/main/xinnong_6.model3.json',
                 {
-                    // 模型加载选项，提升质量
                     autoInteract: true,
                     focusOffsetX: 0,
                     focusOffsetY: 0
@@ -324,7 +436,7 @@
             const scaledWidth = model.width * scale;
             const scaledHeight = model.height * scale;
             
-            // 向左上角偏移，露出人物
+            // 向左上角偏移
             const offsetX = -scaledWidth * 3;
             const offsetY = -scaledHeight * 2.8;
             
@@ -332,7 +444,6 @@
             model.y = offsetY;
             
             console.log(`📐 缩放比例: ${(scale * 100).toFixed(1)}%`);
-            console.log(`📐 显示尺寸: ${scaledWidth.toFixed(0)} x ${scaledHeight.toFixed(0)}`);
             
             // ========== 播放入场动作 ==========
             setTimeout(async () => {
@@ -349,6 +460,15 @@
                 }
             }, 500);
             
+            // 延迟2秒后显示欢迎语
+            setTimeout(() => {
+                showSpeech("欢迎来到我的博客！✨", 4000);
+            }, 2000);
+            
+            // ========== 鼠标悬停事件（鼠标移到容器上说话）==========
+            container.addEventListener('mouseenter', onMouseEnter);
+            container.addEventListener('mouseleave', onMouseLeave);
+            
             // ========== 容器拖拽 ==========
             let isDragging = false;
             let dragStartX = 0, dragStartY = 0;
@@ -364,6 +484,14 @@
                 container.style.bottom = 'auto';
                 container.style.left = left + 'px';
                 container.style.top = top + 'px';
+                // 拖拽时同步调整气泡位置
+                updateBubblePosition();
+            }
+            
+            function updateBubblePosition() {
+                const rect = container.getBoundingClientRect();
+                bubble.style.right = (window.innerWidth - rect.left + 20) + 'px';
+                bubble.style.bottom = (window.innerHeight - rect.top + 30) + 'px';
             }
             
             container.addEventListener('mousedown', (e) => {
@@ -399,7 +527,7 @@
             
             container.style.cursor = 'move';
             
-            // 点击模型小反馈
+            // 点击模型时的跳跃动画（保留，但不说话）
             model.on('click', () => {
                 const origY = model.y;
                 model.y -= 10;
@@ -408,7 +536,11 @@
                 }, 120);
             });
             
-            console.log('✨ 看板娘加载完成！高清模式已启用');
+            // 初始化气泡位置
+            setTimeout(updateBubblePosition, 100);
+            
+            console.log('✨ 看板娘加载完成！');
+            console.log('💬 鼠标移到看板娘上就会说话~');
             
         } catch (err) {
             console.error('❌ 看板娘加载失败:', err);
