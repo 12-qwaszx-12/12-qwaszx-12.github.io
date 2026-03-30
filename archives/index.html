@@ -184,37 +184,38 @@
     }
     
     /* 台词气泡样式 */
-    .speech-bubble {
-        position: fixed;
-        right: 430px;
-        bottom: 230px;
-        max-width: 250px;
-        min-width: 120px;
-        background: white;
-        border-radius: 18px;
-        padding: 10px 15px;
-        font-size: 14px;
-        color: #333;
-        font-family: system-ui, -apple-system, sans-serif;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-        z-index: 10001;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-        border: 1px solid #e0e0e0;
-    }
-    
-    .speech-bubble::before {
-        content: '';
-        position: absolute;
-        right: -8px;
-        bottom: 15px;
-        width: 0;
-        height: 0;
-        border-left: 8px solid white;
-        border-top: 6px solid transparent;
-        border-bottom: 6px solid transparent;
-    }
+.speech-bubble {
+    position: fixed;
+    right: 420px;       /* 调整气泡水平位置，靠人物右上 */
+    bottom: 260px;      /* 调整气泡垂直位置，靠人物右上 */
+    max-width: 250px;
+    min-width: 120px;
+    background: #ffffff;  /* 背景白色 */
+    border-radius: 18px;  /* 保持原椭圆形状 */
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #ff69b4;       /* 文字粉色 */
+    font-family: system-ui, -apple-system, sans-serif;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    z-index: 10001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border: 1px solid #e0e0e0;
+}
+
+/* 尾巴保持不变 */
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    right: -8px;
+    bottom: 15px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid white;  /* 尾巴颜色不变 */
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
     
     /* 移动端调整 */
     @media (max-width: 768px) {
@@ -409,7 +410,7 @@
                 (containerHeight * 0.7) / model.height,
                 0.1
             );
-            scale = Math.max(scale, 0.1);
+            scale = Math.max(scale, 0.078);
             
             model.scale.set(scale);
             
@@ -507,14 +508,43 @@
             
             container.style.cursor = 'move';
             
-            // 点击模型时的跳跃动画（保留，但不说话）
-            model.on('click', () => {
-                const origY = model.y;
-                model.y -= 10;
-                setTimeout(() => {
-                    model.y = origY;
-                }, 120);
-            });
+// 点击模型时随机播放一个 idle 动作 + 微小跳跃动画
+model.on('click', async () => {
+    try {
+        if (model.internalModel && model.internalModel.motionManager) {
+            const motionManager = model.internalModel.motionManager;
+            const motionGroups = motionManager.definitions;
+
+            const idleList = [];
+
+            // 找所有 idle 动作
+            for (const group in motionGroups) {
+                if (group.toLowerCase().includes("idle")) {
+                    const motions = motionGroups[group];
+                    motions.forEach((m, i) => {
+                        idleList.push({ group: group, index: i });
+                    });
+                }
+            }
+
+            // 随机选择一个 idle 播放
+            if (idleList.length > 0) {
+                const random = idleList[Math.floor(Math.random() * idleList.length)];
+                // 播放动作，不改变模型位置或缩放
+                model.motion(random.group, random.index, { priority: 1, interruptible: true });
+            }
+        }
+    } catch (e) {
+        console.log("idle 播放失败:", e);
+    }
+
+    // 小跳跃动画，保留原来的互动效果
+    const origY = model.y;
+    model.y -= 10;
+    setTimeout(() => {
+        model.y = origY;
+    }, 120);
+});
             
             // 初始化气泡位置
             setTimeout(updateBubblePosition, 100);
