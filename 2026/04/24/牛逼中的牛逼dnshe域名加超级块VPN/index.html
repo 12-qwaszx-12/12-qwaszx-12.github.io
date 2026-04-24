@@ -1,0 +1,890 @@
+  <!DOCTYPE html>
+  <html lang="en"  
+      data-theme-mode="auto"
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_a0oqhord1y';window.REIMU_CONFIG.clipboard_tips = {"success":{"en":"Copy successfully (*^▽^*)"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = 'All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'http://example.com';</script>
+  <title>
+    牛逼中的牛逼dnshe域名加超级块VPN | Hexo
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_a0oqhord1y.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="首先需要https:&#x2F;&#x2F;www.dnshe.com&#x2F;https:&#x2F;&#x2F;dash.cloudflare.com&#x2F;https:&#x2F;&#x2F;github.com&#x2F;cmliu&#x2F;edgetunnel 次要VPN https:&#x2F;&#x2F;github.com&#x2F;2dust&#x2F;v2rayn 正文教程打开 dnshe 注册登录然后注册那个ccwu.cc的域名打开cloudflare登录后点击左边栏的”域名&#x2F;预览”再在右上角点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛逼中的牛逼dnshe域名加超级块VPN">
+<meta property="og:url" content="http://example.com/2026/04/24/%E7%89%9B%E9%80%BC%E4%B8%AD%E7%9A%84%E7%89%9B%E9%80%BCdnshe%E5%9F%9F%E5%90%8D%E5%8A%A0%E8%B6%85%E7%BA%A7%E5%9D%97VPN/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="首先需要https:&#x2F;&#x2F;www.dnshe.com&#x2F;https:&#x2F;&#x2F;dash.cloudflare.com&#x2F;https:&#x2F;&#x2F;github.com&#x2F;cmliu&#x2F;edgetunnel 次要VPN https:&#x2F;&#x2F;github.com&#x2F;2dust&#x2F;v2rayn 正文教程打开 dnshe 注册登录然后注册那个ccwu.cc的域名打开cloudflare登录后点击左边栏的”域名&#x2F;预览”再在右上角点">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.ibb.co/dsxYQwp0/2026-04-24-152429.png">
+<meta property="article:published_time" content="2026-04-24T06:36:12.000Z">
+<meta property="article:modified_time" content="2026-04-24T07:50:43.069Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.ibb.co/dsxYQwp0/2026-04-24-152429.png">
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+      </div>
+      <div class="loading-word">Loading...</div>
+    </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation">
+        <a class="main-nav-link-wrap" href="/">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">Home</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/archives">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">Archives</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/about">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">About</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/friend">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">Friend</span>
+        </a>
+    <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed" target="_blank"></a>
+  </nav>
+</div>
+<header id="header" aria-label="Site header">
+        <picture>
+        </picture>
+          <img  fetchpriority="high" src="/images/banner.webp" alt="牛逼中的牛逼dnshe域名加超级块VPN">
+  <div id="header-outer">
+    <div id="header-title">
+          <span id="logo">
+            <h1 data-aos="slide-up">牛逼中的牛逼dnshe域名加超级块VPN</h1>
+          </span>
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+        </h2>
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content"  class="sidebar-right" >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E9%9C%80%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">首先需要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A1%E8%A6%81"><span class="toc-number">2.</span> <span class="toc-text">次要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87%E6%95%99%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">正文教程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80-dnshe-%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95%E7%84%B6%E5%90%8E%E6%B3%A8%E5%86%8C%E9%82%A3%E4%B8%AAccwu-cc%E7%9A%84%E5%9F%9F%E5%90%8D%E6%89%93%E5%BC%80cloudflare%E7%99%BB%E5%BD%95%E5%90%8E%E7%82%B9%E5%87%BB%E5%B7%A6%E8%BE%B9%E6%A0%8F%E7%9A%84%E2%80%9D%E5%9F%9F%E5%90%8D-%E9%A2%84%E8%A7%88%E2%80%9D%E5%86%8D%E5%9C%A8%E5%8F%B3%E4%B8%8A%E8%A7%92%E7%82%B9%E2%80%9D%E6%B7%BB%E5%8A%A0%E5%9F%9F%E5%90%8D%E2%80%9D%E2%80%9D%E8%BF%9E%E6%8E%A5%E5%9F%9F%E5%90%8D%E2%80%9D%E8%BE%93%E5%85%A5%E4%BD%A0%E5%9C%A8dnshe%E4%B8%8A%E6%B3%A8%E5%86%8C%E7%9A%84%E5%9F%9F%E5%90%8D-%E7%82%B9%E5%87%BB%E2%80%9D%E7%BB%A7%E7%BB%AD%E2%80%9D%E7%84%B6%E5%90%8E%E9%80%89%E5%85%8D%E8%B4%B9%E7%9A%84%E9%82%A3%E4%B8%AA%E4%B8%8B%E6%8B%89%E5%88%B0%E5%BA%95%E9%80%89%E6%8B%A9%E2%80%9D%E5%89%8D%E5%BE%80%E5%B9%B6%E6%BF%80%E6%B4%BB%E2%80%9D%E5%9C%A8%E5%BC%B9%E8%AF%B4%E8%A6%81%E4%BD%BF%E7%94%A8dns%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%B6%E7%82%B9%E5%87%BB%E2%80%9D%E7%A1%AE%E8%AE%A4%E2%80%9D-%E6%8A%8A%E7%BB%99%E6%88%91%E4%BB%AC%E5%88%86%E9%85%8D%E7%9A%84dns%E5%A4%8D%E5%88%B6%E4%B8%8B%E6%9D%A5%E5%86%8D%E6%AC%A1%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E6%97%B6%EF%BC%88dnshe%EF%BC%89-%E7%82%B9%E5%87%BB%E6%88%91%E4%BB%AC%E5%9F%9F%E5%90%8D%E5%90%8E%E9%9D%A2%E4%B8%89%E4%B8%AA%E6%8C%89%E9%92%AE%E4%B8%AD%E7%9A%84%E2%80%9DDNS%E6%9C%8D%E5%8A%A1%E5%99%A8%E2%80%9D%E6%8A%8A%E4%BB%8Ecloudflare%E4%B8%AD%E5%A4%8D%E5%88%B6%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%B2%98%E8%B4%B4%E5%88%B0%E9%87%8C%E9%9D%A2%E7%82%B9%E2%80%9D%E4%B8%80%E9%94%AE%E6%9B%BF%E6%8D%A2%E2%80%9D%E5%BD%93%E5%9F%9F%E5%90%8D%E7%9A%84%E7%8A%B6%E6%80%81%E6%98%BE%E7%A4%BA%E7%9A%84%E6%98%AF%E5%B7%B2%E8%A7%A3%E6%9E%90%E5%90%8E%E5%B0%B1%E5%8F%AF%E4%BB%A5%E8%BF%94%E5%9B%9Ecf%E4%BA%86-%E6%8B%89%E5%88%B0%E4%B8%8B%E9%9D%A2%E7%82%B9%E2%80%9D%E6%88%91%E5%B7%B2%E6%9B%B4%E6%96%B0%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E2%80%9D%E9%9A%8F%E5%90%8E%E4%BC%9A%E5%87%BA%E7%8E%B0%E8%AF%B4%E6%98%AF%E6%AD%A3%E5%9C%A8%E7%AD%89%E5%BE%85%E6%B3%A8%E5%86%8C%E6%9C%BA%E6%9E%84%E2%80%A6%E7%9A%84-%E7%AD%89%E5%BE%85%E4%B8%80%E4%BC%9A%E7%82%B9%E2%80%9D%E7%AB%8B%E5%8D%B3%E6%A3%80%E6%9F%A5%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E2%80%9D-%E5%88%B0%E6%97%B6%E5%80%99%E5%B0%B1%E8%AF%B4%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%9C%A8%E5%8F%97%E4%BF%9D%E6%8A%A4%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%E5%9B%9E%E4%B8%BB%E9%A1%B5-%E6%89%BE%E5%88%B0%E2%80%9D%E5%AD%98%E5%82%A8%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E2%80%9D%E6%89%BE%E2%80%9DWorkers-KV%E2%80%9D%E9%9A%8F%E4%BE%BF%E8%B5%B7%E4%B8%AA%E5%90%8D%E7%84%B6%E5%90%8E%E2%80%9D%E5%88%9B%E5%BB%BA%E2%80%9D-%E5%9C%A8-%E5%90%8C%E5%88%97%E6%89%BE%E2%80%9D%E8%AE%A1%E7%AE%97%E2%80%9D-%E2%80%9CWorkers%E5%92%8CPages%E2%80%9D-%E7%84%B6%E5%90%8E%E5%8F%B3%E4%B8%8A%E8%A7%92%E2%80%9D%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E2%80%9D%E6%89%BE%E5%88%B0%E4%B8%8B%E9%9D%A2%E5%B0%8F%E8%A1%8C%E7%9A%84%E2%80%9D%E6%83%B3%E8%A6%81%E9%83%A8%E7%BD%B2Pages%EF%BC%9F-%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E2%80%9D%E7%84%B6%E5%90%8E%E7%82%B9%E2%80%9D%E6%8B%96%E6%94%BE%E6%96%87%E4%BB%B6%E2%80%9D-%E7%82%B9%E5%90%8E%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E9%9A%8F%E4%BE%BF%E5%A1%AB%E7%84%B6%E5%90%8E%E2%80%9D%E5%88%9B%E5%BB%BA%E2%80%9D-%E4%BB%8Ehttps-github-com-cmliu-edgetunnel-%E9%87%8C%E4%B8%8B%E8%BD%BDzip%E5%B9%B6%E6%8B%96%E5%88%B0%E8%A6%81%E6%8B%96%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9%E7%82%B9%E2%80%9D%E9%83%A8%E7%BD%B2%E7%AB%99%E7%82%B9%E2%80%9D%E7%84%B6%E5%90%8E%E5%B0%B1%E9%83%A8%E7%BD%B2%E5%88%B0%E5%85%A8%E7%90%83%E4%BA%86-%E7%82%B9%E2%80%9D%E7%BB%A7%E7%BB%AD%E5%A4%84%E7%90%86%E9%A1%B9%E7%9B%AE%E2%80%9D-%E5%9C%A8%E9%A1%B6%E4%B8%8A%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E2%80%9D%E5%8F%B3%E8%BE%B9%E7%9A%84%E2%80%9D%E8%AE%BE%E7%BD%AE%E2%80%9D%E6%B7%BB%E5%8A%A0%E5%8F%98%E9%87%8F%E5%92%8C%E6%9C%BA%E5%AF%86-%E7%B1%BB%E5%9E%8B%E6%96%87%E6%9C%AC-%E5%8F%98%E9%87%8F%E5%90%8D%E7%A7%B0ADMIN-%E5%80%BC%E5%B0%B1%E6%98%AF%E5%AF%86%E7%A0%81%E9%9A%8F%E4%BE%BF%E5%A1%AB-%E8%A6%81%E8%AE%B0%E4%BD%8F%E5%90%8E%E9%9D%A2%E7%94%A8-%E7%84%B6%E5%90%8E%E6%B7%BB%E5%8A%A0%E7%BB%91%E5%AE%9A%E6%89%BE%E2%80%9DKV%E7%A9%BA%E9%97%B4%E2%80%9D%E5%8F%98%E9%87%8F%E5%90%8D%E5%B0%B1%E6%98%AFKV-%E7%A9%BA%E9%97%B4%E5%90%8D%E6%98%AF%E4%BD%A0%E5%88%9B%E7%9A%84kv%E7%A9%BA%E9%97%B4%E5%90%8D%E9%9A%8F%E5%90%8E%E5%B0%B1%E6%98%AF%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E2%80%9D%E4%BA%86%E7%82%B9%E5%87%BB%E2%80%9D%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E2%80%9D%E5%B0%B1%E6%98%AF%E6%B3%A8%E5%86%8C%E7%9A%84%E9%82%A3%E4%B8%AA%E5%9F%9F%E5%90%8D%E7%84%B6%E5%90%8E%E5%87%BA%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%86%8D%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AAcf-%E6%89%93%E5%BC%80%E4%BD%A0%E4%BB%AC%E5%BC%84%E7%9A%84%E9%82%A3%E4%B8%AA%E5%9F%9F%E5%90%8D-%E7%9C%8B%E5%88%B0%E2%80%9D%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%9C%A8%E5%8F%97%E4%BF%9D%E6%8A%A4%E2%80%9D%E7%95%8C%E9%9D%A2%E7%82%B9%E5%8F%B3%E8%BE%B9%E7%9A%84%E8%93%9D%E8%BE%B9%E2%80%9DDNS%E8%AE%B0%E5%BD%95%E2%80%9D%E7%82%B9%E2%80%9D%E6%B7%BB%E5%8A%A0%E8%AE%B0%E5%BD%95%E2%80%9D%E7%B1%BB%E5%9E%8B%E5%B0%B1%E6%98%AFCNAME-%E5%90%8D%E7%A7%B0%E5%A4%8D%E5%88%B6%E5%9B%BE%E4%B8%AD%E7%9A%84%E9%82%A3%E4%B8%AA%E5%90%8D%E7%A7%B0-%E5%86%85%E5%AE%B9%E5%90%8C%E7%90%86-%E7%82%B9%E2%80%9D%E4%BF%9D%E5%AD%98%E2%80%9D-%E5%9B%9E%E5%88%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E7%95%8C%E9%9D%A2%E7%82%B9%E6%BF%80%E6%B4%BB%E5%9F%9F-%E7%AD%89%E5%BE%85%E5%8F%98%E4%B8%BA%E2%80%9D%E6%B4%BB%E5%8A%A8%E2%80%9D%E6%97%B6-%E7%82%B9%E5%8F%B3%E4%B8%8A%E8%A7%92%E2%80%9D%E5%88%9B%E5%BB%BA%E9%83%A8%E7%BD%B2%E2%80%9D-%E5%86%8D%E4%BC%A0%E4%B8%80%E6%AC%A1%E6%96%87%E4%BB%B6%E2%80%9D%E4%BF%9D%E5%AD%98%E9%83%A8%E7%BD%B2%E2%80%9D-%E6%9C%80%E5%90%8E%E7%82%B9%E4%B8%80%E6%AC%A1%E2%80%9D%E7%BB%A7%E7%BB%AD%E5%A4%84%E7%90%86%E2%80%9D%E5%9B%9E%E5%88%B0%E4%B8%8A%E4%B8%80%E7%BA%A7%E9%A1%B5%E9%9D%A2%E7%82%B9%E6%88%91%E4%BB%AC%E7%9A%84%E5%9F%9F%E5%90%8D%E8%B7%B3%E8%BD%AC%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2-%E9%A1%B5%E9%9D%A2-%EF%BC%88https-i-ibb-co-QRSdxSF-2026-04-24-154038-png%EF%BC%89%E8%B7%AF%E5%BE%84%E5%90%8E%E9%9D%A2%E5%86%8D%E8%B7%9F%E4%B8%8Aadmin-%E7%84%B6%E5%90%8E%E5%B0%B1%E8%B7%B3%E8%BD%AC%E5%88%B0-login%E4%BA%86%E8%BE%93%E5%85%A5%E4%B9%8B%E5%89%8DADMIN%E7%9A%84%E5%AF%86%E7%A0%81%E5%B0%B1%E8%BF%9B%E5%85%A5%E4%BA%86%E5%A4%8D%E5%88%B6%E8%87%AA%E9%80%82%E5%BA%94%E8%AE%A2%E9%98%85%E5%8D%B3%E5%8F%AF%E6%94%BE%E5%88%B0clash%E4%B8%8A"><span class="toc-number">4.</span> <span class="toc-text">打开 dnshe 注册登录然后注册那个ccwu.cc的域名打开cloudflare登录后点击左边栏的”域名&#x2F;预览”再在右上角点”添加域名””连接域名”输入你在dnshe上注册的域名 点击”继续”然后选免费的那个下拉到底选择”前往并激活”在弹说要使用dns服务器时点击”确认” 把给我们分配的dns复制下来再次打开注册时（dnshe） 点击我们域名后面三个按钮中的”DNS服务器”把从cloudflare中复制的两个粘贴到里面点”一键替换”当域名的状态显示的是已解析后就可以返回cf了 拉到下面点”我已更新名称服务器”随后会出现说是正在等待注册机构…的 等待一会点”立即检查名称服务器” 到时候就说你的域在受保护就可以了回主页 找到”存储和数据库”找”Workers KV”随便起个名然后”创建” 在 同列找”计算” “Workers和Pages” 然后右上角”创建应用程序”找到下面小行的”想要部署Pages？ 开始使用”然后点”拖放文件”(点后项目名称随便填然后”创建”)  从https:&#x2F;&#x2F;github.com&#x2F;cmliu&#x2F;edgetunnel 里下载zip并拖到要拖到的地方点”部署站点”然后就部署到全球了 点”继续处理项目” 在顶上”自定义域”右边的”设置”添加变量和机密  类型文本 变量名称ADMIN 值就是密码随便填(要记住后面用)然后添加绑定找”KV空间”变量名就是KV 空间名是你创的kv空间名随后就是”自定义域”了点击”设置自定义域”就是注册的那个域名然后出现一个再打开一个cf 打开你们弄的那个域名 看到”你的域在受保护”界面点右边的蓝边”DNS记录”点”添加记录”类型就是CNAME 名称复制图中的那个名称 内容同理 点”保存” 回到图中的界面点激活域 等待变为”活动”时 点右上角”创建部署” 再传一次文件”保存部署” 最后点一次”继续处理”回到上一级页面点我们的域名跳转到了一个页面[页面]（https:&#x2F;&#x2F;i.ibb.co&#x2F;QRSdxSF&#x2F;2026-04-24-154038.png）路径后面再跟上admin 然后就跳转到&#x2F;login了输入之前ADMIN的密码就进入了复制自适应订阅即可放到clash上</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E9%80%89%E8%AE%A2%E9%98%85%E7%94%9F%E6%88%90"><span class="toc-number">4.1.</span> <span class="toc-text">优选订阅生成</span></a></li></ol></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="John Doe" class="lazyload">
+  <div class="sidebar-author-name">John Doe</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">5</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-牛逼中的牛逼dnshe域名加超级块VPN" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2026-04-24T06:36:12.000Z" itemprop="datePublished">2026-04-24</time>
+    <time style="display: none;" id="post-update-time">2026-04-24</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <h4 id="首先需要"><a href="#首先需要" class="headerlink" title="首先需要"></a>首先需要</h4><p><a target="_blank" rel="noopener" href="https://www.dnshe.com/">https://www.dnshe.com/</a><br><a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">https://dash.cloudflare.com/</a><br><a target="_blank" rel="noopener" href="https://github.com/cmliu/edgetunnel">https://github.com/cmliu/edgetunnel</a></p>
+<h4 id="次要"><a href="#次要" class="headerlink" title="次要"></a>次要</h4><p>VPN <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayn">https://github.com/2dust/v2rayn</a></p>
+<h4 id="正文教程"><a href="#正文教程" class="headerlink" title="正文教程"></a>正文教程</h4><h2 id="打开-dnshe-注册登录然后注册那个ccwu-cc的域名打开cloudflare登录后点击左边栏的”域名-预览”再在右上角点”添加域名””连接域名”输入你在dnshe上注册的域名-点击”继续”然后选免费的那个下拉到底选择”前往并激活”在弹说要使用dns服务器时点击”确认”-把给我们分配的dns复制下来再次打开注册时（dnshe）-点击我们域名后面三个按钮中的”DNS服务器”把从cloudflare中复制的两个粘贴到里面点”一键替换”当域名的状态显示的是已解析后就可以返回cf了-拉到下面点”我已更新名称服务器”随后会出现说是正在等待注册机构…的-等待一会点”立即检查名称服务器”-到时候就说你的域在受保护就可以了回主页-找到”存储和数据库”找”Workers-KV”随便起个名然后”创建”-在-同列找”计算”-“Workers和Pages”-然后右上角”创建应用程序”找到下面小行的”想要部署Pages？-开始使用”然后点”拖放文件”-点后项目名称随便填然后”创建”-从https-github-com-cmliu-edgetunnel-里下载zip并拖到要拖到的地方点”部署站点”然后就部署到全球了-点”继续处理项目”-在顶上”自定义域”右边的”设置”添加变量和机密-类型文本-变量名称ADMIN-值就是密码随便填-要记住后面用-然后添加绑定找”KV空间”变量名就是KV-空间名是你创的kv空间名随后就是”自定义域”了点击”设置自定义域”就是注册的那个域名然后出现一个再打开一个cf-打开你们弄的那个域名-看到”你的域在受保护”界面点右边的蓝边”DNS记录”点”添加记录”类型就是CNAME-名称复制图中的那个名称-内容同理-点”保存”-回到图中的界面点激活域-等待变为”活动”时-点右上角”创建部署”-再传一次文件”保存部署”-最后点一次”继续处理”回到上一级页面点我们的域名跳转到了一个页面-页面-（https-i-ibb-co-QRSdxSF-2026-04-24-154038-png）路径后面再跟上admin-然后就跳转到-login了输入之前ADMIN的密码就进入了复制自适应订阅即可放到clash上"><a href="#打开-dnshe-注册登录然后注册那个ccwu-cc的域名打开cloudflare登录后点击左边栏的”域名-预览”再在右上角点”添加域名””连接域名”输入你在dnshe上注册的域名-点击”继续”然后选免费的那个下拉到底选择”前往并激活”在弹说要使用dns服务器时点击”确认”-把给我们分配的dns复制下来再次打开注册时（dnshe）-点击我们域名后面三个按钮中的”DNS服务器”把从cloudflare中复制的两个粘贴到里面点”一键替换”当域名的状态显示的是已解析后就可以返回cf了-拉到下面点”我已更新名称服务器”随后会出现说是正在等待注册机构…的-等待一会点”立即检查名称服务器”-到时候就说你的域在受保护就可以了回主页-找到”存储和数据库”找”Workers-KV”随便起个名然后”创建”-在-同列找”计算”-“Workers和Pages”-然后右上角”创建应用程序”找到下面小行的”想要部署Pages？-开始使用”然后点”拖放文件”-点后项目名称随便填然后”创建”-从https-github-com-cmliu-edgetunnel-里下载zip并拖到要拖到的地方点”部署站点”然后就部署到全球了-点”继续处理项目”-在顶上”自定义域”右边的”设置”添加变量和机密-类型文本-变量名称ADMIN-值就是密码随便填-要记住后面用-然后添加绑定找”KV空间”变量名就是KV-空间名是你创的kv空间名随后就是”自定义域”了点击”设置自定义域”就是注册的那个域名然后出现一个再打开一个cf-打开你们弄的那个域名-看到”你的域在受保护”界面点右边的蓝边”DNS记录”点”添加记录”类型就是CNAME-名称复制图中的那个名称-内容同理-点”保存”-回到图中的界面点激活域-等待变为”活动”时-点右上角”创建部署”-再传一次文件”保存部署”-最后点一次”继续处理”回到上一级页面点我们的域名跳转到了一个页面-页面-（https-i-ibb-co-QRSdxSF-2026-04-24-154038-png）路径后面再跟上admin-然后就跳转到-login了输入之前ADMIN的密码就进入了复制自适应订阅即可放到clash上" class="headerlink" title="打开 dnshe 注册登录然后注册那个ccwu.cc的域名打开cloudflare登录后点击左边栏的”域名&#x2F;预览”再在右上角点”添加域名””连接域名”输入你在dnshe上注册的域名 点击”继续”然后选免费的那个下拉到底选择”前往并激活”在弹说要使用dns服务器时点击”确认” 把给我们分配的dns复制下来再次打开注册时（dnshe） 点击我们域名后面三个按钮中的”DNS服务器”把从cloudflare中复制的两个粘贴到里面点”一键替换”当域名的状态显示的是已解析后就可以返回cf了 拉到下面点”我已更新名称服务器”随后会出现说是正在等待注册机构…的 等待一会点”立即检查名称服务器” 到时候就说你的域在受保护就可以了回主页 找到”存储和数据库”找”Workers KV”随便起个名然后”创建” 在 同列找”计算” “Workers和Pages” 然后右上角”创建应用程序”找到下面小行的”想要部署Pages？ 开始使用”然后点”拖放文件”(点后项目名称随便填然后”创建”)  从https://github.com/cmliu/edgetunnel 里下载zip并拖到要拖到的地方点”部署站点”然后就部署到全球了 点”继续处理项目” 在顶上”自定义域”右边的”设置”添加变量和机密  类型文本 变量名称ADMIN 值就是密码随便填(要记住后面用)然后添加绑定找”KV空间”变量名就是KV 空间名是你创的kv空间名随后就是”自定义域”了点击”设置自定义域”就是注册的那个域名然后出现一个再打开一个cf 打开你们弄的那个域名 看到”你的域在受保护”界面点右边的蓝边”DNS记录”点”添加记录”类型就是CNAME 名称复制图中的那个名称 内容同理 点”保存” 回到图中的界面点激活域 等待变为”活动”时 点右上角”创建部署” 再传一次文件”保存部署” 最后点一次”继续处理”回到上一级页面点我们的域名跳转到了一个页面[页面]（https://i.ibb.co/QRSdxSF/2026-04-24-154038.png）路径后面再跟上admin 然后就跳转到&#x2F;login了输入之前ADMIN的密码就进入了复制自适应订阅即可放到clash上"></a>打开 <a target="_blank" rel="noopener" href="https://www.dnshe.com/">dnshe</a> 注册登录<br>然后注册那个ccwu.cc的域名<br>打开<a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">cloudflare</a><br>登录后点击左边栏的”域名&#x2F;预览”<br>再在右上角点”添加域名””连接域名”输入你在dnshe上注册的域名 点击”继续”然后选免费的那个<br>下拉到底选择”前往并激活”在弹说要使用dns服务器时点击”确认” 把给我们分配的dns复制下来<br>再次打开注册时（dnshe） 点击我们域名后面三个按钮中的”DNS服务器”<br>把从cloudflare中复制的两个粘贴到里面点”一键替换”<br>当域名的状态显示的是已解析后就可以返回cf了 拉到下面点”我已更新名称服务器”<br>随后会出现说是正在等待注册机构…的 等待一会点”立即检查名称服务器” 到时候就说你的域在受保护就可以了<br>回主页 找到”存储和数据库”找”Workers KV”随便起个名然后”创建” 在 同列找”计算” “Workers和Pages” 然后右上角”创建应用程序”<br>找到下面小行的”想要部署Pages？ 开始使用”然后点”拖放文件”(点后项目名称随便填然后”创建”)  从<a target="_blank" rel="noopener" href="https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip">https://github.com/cmliu/edgetunnel</a> 里下载zip并拖到要拖到的地方点”部署站点”<br>然后就部署到全球了 点”继续处理项目” 在顶上”自定义域”右边的”设置”添加变量和机密  类型文本 变量名称ADMIN 值就是密码随便填(要记住后面用)<br>然后添加绑定找”KV空间”变量名就是KV 空间名是你创的kv空间名<br>随后就是”自定义域”了点击”设置自定义域”就是注册的那个域名<br>然后出现一个<img src="https://i.ibb.co/dsxYQwp0/2026-04-24-152429.png"><br>再打开一个cf 打开你们弄的那个域名 看到”你的域在受保护”界面点右边的蓝边”DNS记录”点”添加记录”<br>类型就是CNAME 名称复制图中的那个名称 内容同理 点”保存” 回到图中的界面点激活域 等待<br>变为”活动”时 点右上角”创建部署” 再传一次文件”保存部署” 最后点一次”继续处理”回到上一级页面点我们的域名<br>跳转到了一个页面[页面]（<a target="_blank" rel="noopener" href="https://i.ibb.co/QRSdxSF/2026-04-24-154038.png%EF%BC%89">https://i.ibb.co/QRSdxSF/2026-04-24-154038.png）</a><br>路径后面再跟上admin 然后就跳转到&#x2F;login了输入之前ADMIN的密码就进入了<br>复制自适应订阅即可放到clash上</h2><h4 id="优选订阅生成"><a href="#优选订阅生成" class="headerlink" title="优选订阅生成"></a>优选订阅生成</h4><p>模式可以自定义<br>随机优选数量可以多整点 20 25<br>端口也可以随机<br>要是想专门调别的国家就点那个”我是高手 就要折腾” 下来找到cloudflare CDN访问设置</p>
+
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+    <div class="article-nav-link-wrap right">
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="超级无敌黄黄黄" class="lazyload">
+      <a href="/2026/04/24/%E8%B6%85%E7%BA%A7%E6%97%A0%E6%95%8C%E9%BB%84%E9%BB%84%E9%BB%84/" aria-label="Next: 超级无敌黄黄黄"  title="Next: 超级无敌黄黄黄"></a>
+      <div class="article-nav-caption">Next</div>
+      <h3 class="article-nav-title">
+          超级无敌黄黄黄
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+
+</section>
+        </div>
+        <footer id="footer">
+  
+
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+
+      &copy; 2026 John Doe<br>
+      Powered by 
+      <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Live2D 看板娘 -->
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.8/dist/browser/pixi.min.js"></script>
+<!-- 本地 Live2D Cubism Core -->
+<script src="/live2d/Core/live2dcubismcore.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/cubism4.min.js"></script>
+
+<style>
+    /* 看板娘容器 */
+    #waifu-container {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 400px;
+        height: 200px;
+        z-index: 9999;
+        pointer-events: auto;
+        overflow: hidden;
+        border-radius: 12px;
+        background: transparent;
+        cursor: move;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        image-rendering: crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    /* 台词气泡样式 */
+.speech-bubble {
+    position: fixed;
+    right: 420px;       /* 调整气泡水平位置，靠人物右上 */
+    bottom: 260px;      /* 调整气泡垂直位置，靠人物右上 */
+    max-width: 250px;
+    min-width: 120px;
+    background: #ffffff;  /* 背景白色 */
+    border-radius: 18px;  /* 保持原椭圆形状 */
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #ff69b4;       /* 文字粉色 */
+    font-family: system-ui, -apple-system, sans-serif;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    z-index: 10001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border: 1px solid #e0e0e0;
+}
+
+/* 尾巴保持不变 */
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    right: -8px;
+    bottom: 15px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid white;  /* 尾巴颜色不变 */
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+    
+    /* 移动端调整 */
+    @media (max-width: 768px) {
+        .speech-bubble {
+            right: 350px;
+            bottom: 180px;
+            max-width: 180px;
+            font-size: 12px;
+            padding: 8px 12px;
+        }
+    }
+</style>
+
+<div id="speech-bubble" class="speech-bubble"></div>
+
+<script>
+(function() {
+    // ========== 台词库 ==========
+    const speechList = [
+        // 欢迎语
+        "欢迎来到我的博客！✨",
+        "你好呀！很高兴见到你~",
+        "今天过得怎么样？",
+        "要常来看看我哦！",
+        "辛苦啦，休息一下吧~",
+        
+        // 问候语
+        "早上好！☀️",
+        "下午好呀~",
+        "晚上好，要注意休息哦！🌙",
+        "周末愉快！🎉",
+        
+        // 互动语
+        "喜欢我的新衣服吗？",
+        "拖拽我可以移动到任何位置~",
+        "要不要一起玩游戏？",
+        "今天想聊点什么呢？",
+        
+        // 可爱语
+        "嘿嘿~ 😊",
+        "加油！你是最棒的！💪",
+        "要开心每一天！",
+        "注意保暖哦~",
+        "记得按时吃饭！🍚",
+        
+        // 随机语
+        "悄悄告诉你，这里有很多有趣的内容~",
+        "有什么问题可以随时问我！",
+        "我正在看着你哦 👀",
+        "要经常来陪我玩呀！",
+        "今天的天气真不错~"
+    ];
+    
+    // 防止重复说话的标志
+    let isSpeaking = false;
+    let hoverTimeout = null;
+    
+    // 获取随机台词
+    function getRandomSpeech() {
+        const randomIndex = Math.floor(Math.random() * speechList.length);
+        return speechList[randomIndex];
+    }
+    
+    // 显示台词气泡
+    let speechTimeout = null;
+    const bubble = document.getElementById('speech-bubble');
+    
+    function showSpeech(text, duration = 4000) {
+        if (!bubble) return;
+        
+        // 清除之前的定时器
+        if (speechTimeout) clearTimeout(speechTimeout);
+        
+        // 设置文字并显示
+        bubble.textContent = text;
+        bubble.style.opacity = '1';
+        
+        // 自动隐藏
+        speechTimeout = setTimeout(() => {
+            bubble.style.opacity = '0';
+        }, duration);
+    }
+    
+    // 鼠标悬停时说话（带防抖，避免频繁触发）
+    function onMouseEnter() {
+        if (hoverTimeout) clearTimeout(hoverTimeout);
+        
+        hoverTimeout = setTimeout(() => {
+            const text = getRandomSpeech();
+            showSpeech(text, 3500);
+        }, 300); // 悬停300ms后说话，避免误触发
+    }
+    
+    // 鼠标离开时清除待执行的说话
+    function onMouseLeave() {
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = null;
+        }
+    }
+    
+    window.addEventListener('load', async function() {
+        try {
+            console.log('🚀 开始加载看板娘...');
+            
+            // 固定容器尺寸
+            const containerWidth = 400;
+            const containerHeight = 200;
+            
+            // 创建容器
+            let container = document.getElementById('waifu-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'waifu-container';
+                document.body.appendChild(container);
+            }
+            container.innerHTML = '';
+            container.style.width = containerWidth + 'px';
+            container.style.height = containerHeight + 'px';
+            container.style.right = '20px';
+            container.style.bottom = '20px';
+            container.style.left = 'auto';
+            container.style.top = 'auto';
+            
+            // 创建 canvas
+            const canvas = document.createElement('canvas');
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.display = 'block';
+            canvas.style.position = 'absolute';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.pointerEvents = 'auto';
+            container.appendChild(canvas);
+            
+            // 获取设备像素比
+            const pixelRatio = Math.min(window.devicePixelRatio || 1, 2.5);
+            console.log(`📱 设备像素比: ${pixelRatio}`);
+            
+            // 创建 PIXI 应用
+            const app = new PIXI.Application({
+                view: canvas,
+                width: containerWidth,
+                height: containerHeight,
+                transparent: true,
+                backgroundColor: 0x000000,
+                backgroundAlpha: 0,
+                antialias: true,
+                resolution: pixelRatio,
+                autoDensity: true,
+                clearBeforeRender: true,
+                preserveDrawingBuffer: false
+            });
+            
+            console.log('✅ PIXI 应用创建成功');
+            
+            // 加载模型
+            console.log('📥 加载模型中...');
+            const model = await PIXI.live2d.Live2DModel.from(
+                'https://raw.githubusercontent.com/12-qwaszx-12/xinnong/main/xinnong_6.model3.json',
+                {
+                    autoInteract: true,
+                    focusOffsetX: 0,
+                    focusOffsetY: 0
+                }
+            );
+            
+            app.stage.addChild(model);
+            console.log('✅ 模型加载成功');
+            
+            // 等待模型尺寸获取
+            await new Promise((resolve) => {
+                let attempts = 0;
+                const checkSize = () => {
+                    if (model.width && model.height && model.width > 0) {
+                        console.log(`📏 模型原始尺寸: ${model.width} x ${model.height}`);
+                        resolve();
+                    } else if (attempts < 50) {
+                        attempts++;
+                        setTimeout(checkSize, 100);
+                    } else {
+                        console.warn('模型尺寸获取超时');
+                        resolve();
+                    }
+                };
+                checkSize();
+            });
+            
+            // 设置缩放和位置
+            let scale = Math.min(
+                (containerWidth * 0.7) / model.width,
+                (containerHeight * 0.7) / model.height,
+                0.1
+            );
+            scale = Math.max(scale, 0.078);
+            
+            model.scale.set(scale);
+            
+            const scaledWidth = model.width * scale;
+            const scaledHeight = model.height * scale;
+            
+            // 向左上角偏移
+            const offsetX = -scaledWidth * 3;
+            const offsetY = -scaledHeight * 2.8;
+            
+            model.x = offsetX;
+            model.y = offsetY;
+            
+            console.log(`📐 缩放比例: ${(scale * 100).toFixed(1)}%`);
+            
+            // ========== 播放入场动作 ==========
+            setTimeout(async () => {
+                try {
+                    if (model.internalModel && model.internalModel.motionManager) {
+                        const motionNames = model.internalModel.motionManager.getMotionNames();
+                        if (motionNames && motionNames.length > 0) {
+                            await model.motion(motionNames[0]);
+                            console.log('✅ 入场动作已播放');
+                        }
+                    }
+                } catch (e) {
+                    console.log('动作播放失败:', e.message);
+                }
+            }, 500);
+            
+            // 延迟2秒后显示欢迎语
+            setTimeout(() => {
+                showSpeech("欢迎来到我的博客！✨", 4000);
+            }, 2000);
+            
+            // ========== 鼠标悬停事件（鼠标移到容器上说话）==========
+            container.addEventListener('mouseenter', onMouseEnter);
+            container.addEventListener('mouseleave', onMouseLeave);
+            
+            // ========== 容器拖拽 ==========
+            let isDragging = false;
+            let dragStartX = 0, dragStartY = 0;
+            let containerStartLeft = 0, containerStartTop = 0;
+            
+            function getContainerPos() {
+                const rect = container.getBoundingClientRect();
+                return { left: rect.left, top: rect.top };
+            }
+            
+            function setContainerPos(left, top) {
+                container.style.right = 'auto';
+                container.style.bottom = 'auto';
+                container.style.left = left + 'px';
+                container.style.top = top + 'px';
+                // 拖拽时同步调整气泡位置
+                updateBubblePosition();
+            }
+            
+            function updateBubblePosition() {
+                const rect = container.getBoundingClientRect();
+                bubble.style.right = (window.innerWidth - rect.left + 20) + 'px';
+                bubble.style.bottom = (window.innerHeight - rect.top + 30) + 'px';
+            }
+            
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                dragStartX = e.clientX;
+                dragStartY = e.clientY;
+                const pos = getContainerPos();
+                containerStartLeft = pos.left;
+                containerStartTop = pos.top;
+                container.style.cursor = 'grabbing';
+                e.preventDefault();
+            });
+            
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const dx = e.clientX - dragStartX;
+                const dy = e.clientY - dragStartY;
+                let newLeft = containerStartLeft + dx;
+                let newTop = containerStartTop + dy;
+                const maxLeft = window.innerWidth - container.offsetWidth;
+                const maxTop = window.innerHeight - container.offsetHeight;
+                newLeft = Math.min(Math.max(newLeft, 0), maxLeft);
+                newTop = Math.min(Math.max(newTop, 0), maxTop);
+                setContainerPos(newLeft, newTop);
+            });
+            
+            window.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    container.style.cursor = 'move';
+                }
+            });
+            
+            container.style.cursor = 'move';
+            
+// 点击模型时随机播放一个 idle 动作 + 微小跳跃动画
+model.on('click', async () => {
+    try {
+        if (model.internalModel && model.internalModel.motionManager) {
+            const motionManager = model.internalModel.motionManager;
+            const motionGroups = motionManager.definitions;
+
+            const idleList = [];
+
+            // 找所有 idle 动作
+            for (const group in motionGroups) {
+                if (group.toLowerCase().includes("idle")) {
+                    const motions = motionGroups[group];
+                    motions.forEach((m, i) => {
+                        idleList.push({ group: group, index: i });
+                    });
+                }
+            }
+
+            // 随机选择一个 idle 播放
+            if (idleList.length > 0) {
+                const random = idleList[Math.floor(Math.random() * idleList.length)];
+                // 播放动作，不改变模型位置或缩放
+                model.motion(random.group, random.index, { priority: 1, interruptible: true });
+            }
+        }
+    } catch (e) {
+        console.log("idle 播放失败:", e);
+    }
+
+    // 小跳跃动画，保留原来的互动效果
+    const origY = model.y;
+    model.y -= 10;
+    setTimeout(() => {
+        model.y = origY;
+    }, 120);
+});
+            
+            // 初始化气泡位置
+            setTimeout(updateBubblePosition, 100);
+            
+            console.log('✨ 看板娘加载完成！');
+            console.log('💬 鼠标移到看板娘上就会说话~');
+            
+        } catch (err) {
+            console.error('❌ 看板娘加载失败:', err);
+            const errorDiv = document.createElement('div');
+            errorDiv.style.position = 'fixed';
+            errorDiv.style.bottom = '100px';
+            errorDiv.style.right = '20px';
+            errorDiv.style.backgroundColor = 'rgba(220,53,69,0.9)';
+            errorDiv.style.color = 'white';
+            errorDiv.style.padding = '12px 16px';
+            errorDiv.style.borderRadius = '12px';
+            errorDiv.style.zIndex = '10002';
+            errorDiv.style.fontSize = '12px';
+            errorDiv.innerHTML = '❌ 加载失败<br><small>' + err.message + '</small>';
+            document.body.appendChild(errorDiv);
+            setTimeout(() => errorDiv.remove(), 5000);
+        }
+    });
+})();
+</script>
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E9%9C%80%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">首先需要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A1%E8%A6%81"><span class="toc-number">2.</span> <span class="toc-text">次要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87%E6%95%99%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">正文教程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80-dnshe-%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95%E7%84%B6%E5%90%8E%E6%B3%A8%E5%86%8C%E9%82%A3%E4%B8%AAccwu-cc%E7%9A%84%E5%9F%9F%E5%90%8D%E6%89%93%E5%BC%80cloudflare%E7%99%BB%E5%BD%95%E5%90%8E%E7%82%B9%E5%87%BB%E5%B7%A6%E8%BE%B9%E6%A0%8F%E7%9A%84%E2%80%9D%E5%9F%9F%E5%90%8D-%E9%A2%84%E8%A7%88%E2%80%9D%E5%86%8D%E5%9C%A8%E5%8F%B3%E4%B8%8A%E8%A7%92%E7%82%B9%E2%80%9D%E6%B7%BB%E5%8A%A0%E5%9F%9F%E5%90%8D%E2%80%9D%E2%80%9D%E8%BF%9E%E6%8E%A5%E5%9F%9F%E5%90%8D%E2%80%9D%E8%BE%93%E5%85%A5%E4%BD%A0%E5%9C%A8dnshe%E4%B8%8A%E6%B3%A8%E5%86%8C%E7%9A%84%E5%9F%9F%E5%90%8D-%E7%82%B9%E5%87%BB%E2%80%9D%E7%BB%A7%E7%BB%AD%E2%80%9D%E7%84%B6%E5%90%8E%E9%80%89%E5%85%8D%E8%B4%B9%E7%9A%84%E9%82%A3%E4%B8%AA%E4%B8%8B%E6%8B%89%E5%88%B0%E5%BA%95%E9%80%89%E6%8B%A9%E2%80%9D%E5%89%8D%E5%BE%80%E5%B9%B6%E6%BF%80%E6%B4%BB%E2%80%9D%E5%9C%A8%E5%BC%B9%E8%AF%B4%E8%A6%81%E4%BD%BF%E7%94%A8dns%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%B6%E7%82%B9%E5%87%BB%E2%80%9D%E7%A1%AE%E8%AE%A4%E2%80%9D-%E6%8A%8A%E7%BB%99%E6%88%91%E4%BB%AC%E5%88%86%E9%85%8D%E7%9A%84dns%E5%A4%8D%E5%88%B6%E4%B8%8B%E6%9D%A5%E5%86%8D%E6%AC%A1%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E6%97%B6%EF%BC%88dnshe%EF%BC%89-%E7%82%B9%E5%87%BB%E6%88%91%E4%BB%AC%E5%9F%9F%E5%90%8D%E5%90%8E%E9%9D%A2%E4%B8%89%E4%B8%AA%E6%8C%89%E9%92%AE%E4%B8%AD%E7%9A%84%E2%80%9DDNS%E6%9C%8D%E5%8A%A1%E5%99%A8%E2%80%9D%E6%8A%8A%E4%BB%8Ecloudflare%E4%B8%AD%E5%A4%8D%E5%88%B6%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%B2%98%E8%B4%B4%E5%88%B0%E9%87%8C%E9%9D%A2%E7%82%B9%E2%80%9D%E4%B8%80%E9%94%AE%E6%9B%BF%E6%8D%A2%E2%80%9D%E5%BD%93%E5%9F%9F%E5%90%8D%E7%9A%84%E7%8A%B6%E6%80%81%E6%98%BE%E7%A4%BA%E7%9A%84%E6%98%AF%E5%B7%B2%E8%A7%A3%E6%9E%90%E5%90%8E%E5%B0%B1%E5%8F%AF%E4%BB%A5%E8%BF%94%E5%9B%9Ecf%E4%BA%86-%E6%8B%89%E5%88%B0%E4%B8%8B%E9%9D%A2%E7%82%B9%E2%80%9D%E6%88%91%E5%B7%B2%E6%9B%B4%E6%96%B0%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E2%80%9D%E9%9A%8F%E5%90%8E%E4%BC%9A%E5%87%BA%E7%8E%B0%E8%AF%B4%E6%98%AF%E6%AD%A3%E5%9C%A8%E7%AD%89%E5%BE%85%E6%B3%A8%E5%86%8C%E6%9C%BA%E6%9E%84%E2%80%A6%E7%9A%84-%E7%AD%89%E5%BE%85%E4%B8%80%E4%BC%9A%E7%82%B9%E2%80%9D%E7%AB%8B%E5%8D%B3%E6%A3%80%E6%9F%A5%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E2%80%9D-%E5%88%B0%E6%97%B6%E5%80%99%E5%B0%B1%E8%AF%B4%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%9C%A8%E5%8F%97%E4%BF%9D%E6%8A%A4%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%E5%9B%9E%E4%B8%BB%E9%A1%B5-%E6%89%BE%E5%88%B0%E2%80%9D%E5%AD%98%E5%82%A8%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E2%80%9D%E6%89%BE%E2%80%9DWorkers-KV%E2%80%9D%E9%9A%8F%E4%BE%BF%E8%B5%B7%E4%B8%AA%E5%90%8D%E7%84%B6%E5%90%8E%E2%80%9D%E5%88%9B%E5%BB%BA%E2%80%9D-%E5%9C%A8-%E5%90%8C%E5%88%97%E6%89%BE%E2%80%9D%E8%AE%A1%E7%AE%97%E2%80%9D-%E2%80%9CWorkers%E5%92%8CPages%E2%80%9D-%E7%84%B6%E5%90%8E%E5%8F%B3%E4%B8%8A%E8%A7%92%E2%80%9D%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E2%80%9D%E6%89%BE%E5%88%B0%E4%B8%8B%E9%9D%A2%E5%B0%8F%E8%A1%8C%E7%9A%84%E2%80%9D%E6%83%B3%E8%A6%81%E9%83%A8%E7%BD%B2Pages%EF%BC%9F-%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E2%80%9D%E7%84%B6%E5%90%8E%E7%82%B9%E2%80%9D%E6%8B%96%E6%94%BE%E6%96%87%E4%BB%B6%E2%80%9D-%E7%82%B9%E5%90%8E%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E9%9A%8F%E4%BE%BF%E5%A1%AB%E7%84%B6%E5%90%8E%E2%80%9D%E5%88%9B%E5%BB%BA%E2%80%9D-%E4%BB%8Ehttps-github-com-cmliu-edgetunnel-%E9%87%8C%E4%B8%8B%E8%BD%BDzip%E5%B9%B6%E6%8B%96%E5%88%B0%E8%A6%81%E6%8B%96%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9%E7%82%B9%E2%80%9D%E9%83%A8%E7%BD%B2%E7%AB%99%E7%82%B9%E2%80%9D%E7%84%B6%E5%90%8E%E5%B0%B1%E9%83%A8%E7%BD%B2%E5%88%B0%E5%85%A8%E7%90%83%E4%BA%86-%E7%82%B9%E2%80%9D%E7%BB%A7%E7%BB%AD%E5%A4%84%E7%90%86%E9%A1%B9%E7%9B%AE%E2%80%9D-%E5%9C%A8%E9%A1%B6%E4%B8%8A%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E2%80%9D%E5%8F%B3%E8%BE%B9%E7%9A%84%E2%80%9D%E8%AE%BE%E7%BD%AE%E2%80%9D%E6%B7%BB%E5%8A%A0%E5%8F%98%E9%87%8F%E5%92%8C%E6%9C%BA%E5%AF%86-%E7%B1%BB%E5%9E%8B%E6%96%87%E6%9C%AC-%E5%8F%98%E9%87%8F%E5%90%8D%E7%A7%B0ADMIN-%E5%80%BC%E5%B0%B1%E6%98%AF%E5%AF%86%E7%A0%81%E9%9A%8F%E4%BE%BF%E5%A1%AB-%E8%A6%81%E8%AE%B0%E4%BD%8F%E5%90%8E%E9%9D%A2%E7%94%A8-%E7%84%B6%E5%90%8E%E6%B7%BB%E5%8A%A0%E7%BB%91%E5%AE%9A%E6%89%BE%E2%80%9DKV%E7%A9%BA%E9%97%B4%E2%80%9D%E5%8F%98%E9%87%8F%E5%90%8D%E5%B0%B1%E6%98%AFKV-%E7%A9%BA%E9%97%B4%E5%90%8D%E6%98%AF%E4%BD%A0%E5%88%9B%E7%9A%84kv%E7%A9%BA%E9%97%B4%E5%90%8D%E9%9A%8F%E5%90%8E%E5%B0%B1%E6%98%AF%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E2%80%9D%E4%BA%86%E7%82%B9%E5%87%BB%E2%80%9D%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E2%80%9D%E5%B0%B1%E6%98%AF%E6%B3%A8%E5%86%8C%E7%9A%84%E9%82%A3%E4%B8%AA%E5%9F%9F%E5%90%8D%E7%84%B6%E5%90%8E%E5%87%BA%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%86%8D%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AAcf-%E6%89%93%E5%BC%80%E4%BD%A0%E4%BB%AC%E5%BC%84%E7%9A%84%E9%82%A3%E4%B8%AA%E5%9F%9F%E5%90%8D-%E7%9C%8B%E5%88%B0%E2%80%9D%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%9C%A8%E5%8F%97%E4%BF%9D%E6%8A%A4%E2%80%9D%E7%95%8C%E9%9D%A2%E7%82%B9%E5%8F%B3%E8%BE%B9%E7%9A%84%E8%93%9D%E8%BE%B9%E2%80%9DDNS%E8%AE%B0%E5%BD%95%E2%80%9D%E7%82%B9%E2%80%9D%E6%B7%BB%E5%8A%A0%E8%AE%B0%E5%BD%95%E2%80%9D%E7%B1%BB%E5%9E%8B%E5%B0%B1%E6%98%AFCNAME-%E5%90%8D%E7%A7%B0%E5%A4%8D%E5%88%B6%E5%9B%BE%E4%B8%AD%E7%9A%84%E9%82%A3%E4%B8%AA%E5%90%8D%E7%A7%B0-%E5%86%85%E5%AE%B9%E5%90%8C%E7%90%86-%E7%82%B9%E2%80%9D%E4%BF%9D%E5%AD%98%E2%80%9D-%E5%9B%9E%E5%88%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E7%95%8C%E9%9D%A2%E7%82%B9%E6%BF%80%E6%B4%BB%E5%9F%9F-%E7%AD%89%E5%BE%85%E5%8F%98%E4%B8%BA%E2%80%9D%E6%B4%BB%E5%8A%A8%E2%80%9D%E6%97%B6-%E7%82%B9%E5%8F%B3%E4%B8%8A%E8%A7%92%E2%80%9D%E5%88%9B%E5%BB%BA%E9%83%A8%E7%BD%B2%E2%80%9D-%E5%86%8D%E4%BC%A0%E4%B8%80%E6%AC%A1%E6%96%87%E4%BB%B6%E2%80%9D%E4%BF%9D%E5%AD%98%E9%83%A8%E7%BD%B2%E2%80%9D-%E6%9C%80%E5%90%8E%E7%82%B9%E4%B8%80%E6%AC%A1%E2%80%9D%E7%BB%A7%E7%BB%AD%E5%A4%84%E7%90%86%E2%80%9D%E5%9B%9E%E5%88%B0%E4%B8%8A%E4%B8%80%E7%BA%A7%E9%A1%B5%E9%9D%A2%E7%82%B9%E6%88%91%E4%BB%AC%E7%9A%84%E5%9F%9F%E5%90%8D%E8%B7%B3%E8%BD%AC%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2-%E9%A1%B5%E9%9D%A2-%EF%BC%88https-i-ibb-co-QRSdxSF-2026-04-24-154038-png%EF%BC%89%E8%B7%AF%E5%BE%84%E5%90%8E%E9%9D%A2%E5%86%8D%E8%B7%9F%E4%B8%8Aadmin-%E7%84%B6%E5%90%8E%E5%B0%B1%E8%B7%B3%E8%BD%AC%E5%88%B0-login%E4%BA%86%E8%BE%93%E5%85%A5%E4%B9%8B%E5%89%8DADMIN%E7%9A%84%E5%AF%86%E7%A0%81%E5%B0%B1%E8%BF%9B%E5%85%A5%E4%BA%86%E5%A4%8D%E5%88%B6%E8%87%AA%E9%80%82%E5%BA%94%E8%AE%A2%E9%98%85%E5%8D%B3%E5%8F%AF%E6%94%BE%E5%88%B0clash%E4%B8%8A"><span class="toc-number">4.</span> <span class="toc-text">打开 dnshe 注册登录然后注册那个ccwu.cc的域名打开cloudflare登录后点击左边栏的”域名&#x2F;预览”再在右上角点”添加域名””连接域名”输入你在dnshe上注册的域名 点击”继续”然后选免费的那个下拉到底选择”前往并激活”在弹说要使用dns服务器时点击”确认” 把给我们分配的dns复制下来再次打开注册时（dnshe） 点击我们域名后面三个按钮中的”DNS服务器”把从cloudflare中复制的两个粘贴到里面点”一键替换”当域名的状态显示的是已解析后就可以返回cf了 拉到下面点”我已更新名称服务器”随后会出现说是正在等待注册机构…的 等待一会点”立即检查名称服务器” 到时候就说你的域在受保护就可以了回主页 找到”存储和数据库”找”Workers KV”随便起个名然后”创建” 在 同列找”计算” “Workers和Pages” 然后右上角”创建应用程序”找到下面小行的”想要部署Pages？ 开始使用”然后点”拖放文件”(点后项目名称随便填然后”创建”)  从https:&#x2F;&#x2F;github.com&#x2F;cmliu&#x2F;edgetunnel 里下载zip并拖到要拖到的地方点”部署站点”然后就部署到全球了 点”继续处理项目” 在顶上”自定义域”右边的”设置”添加变量和机密  类型文本 变量名称ADMIN 值就是密码随便填(要记住后面用)然后添加绑定找”KV空间”变量名就是KV 空间名是你创的kv空间名随后就是”自定义域”了点击”设置自定义域”就是注册的那个域名然后出现一个再打开一个cf 打开你们弄的那个域名 看到”你的域在受保护”界面点右边的蓝边”DNS记录”点”添加记录”类型就是CNAME 名称复制图中的那个名称 内容同理 点”保存” 回到图中的界面点激活域 等待变为”活动”时 点右上角”创建部署” 再传一次文件”保存部署” 最后点一次”继续处理”回到上一级页面点我们的域名跳转到了一个页面[页面]（https:&#x2F;&#x2F;i.ibb.co&#x2F;QRSdxSF&#x2F;2026-04-24-154038.png）路径后面再跟上admin 然后就跳转到&#x2F;login了输入之前ADMIN的密码就进入了复制自适应订阅即可放到clash上</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E9%80%89%E8%AE%A2%E9%98%85%E7%94%9F%E6%88%90"><span class="toc-number">4.1.</span> <span class="toc-text">优选订阅生成</span></a></li></ol></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="John Doe" class="lazyload">
+  <div class="sidebar-author-name">John Doe</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">5</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js" integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8+pUoWX8n1rgq282T" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "John Doe",
+          title: "牛逼中的牛逼dnshe域名加超级块VPN",
+          url: "http://example.com/2026/04/24/%E7%89%9B%E9%80%BC%E4%B8%AD%E7%9A%84%E7%89%9B%E9%80%BCdnshe%E5%9F%9F%E5%90%8D%E5%8A%A0%E8%B6%85%E7%BA%A7%E5%9D%97VPN/",
+          excerpt: "",
+          description: "",
+          stripContent: "首先需要https://www.dnshe.com/https://dash.cloudflare.com/https://github.com/cmliu/edgetunnel 次要VPN https://github.com/2dust/v2rayn 正文教程打开 dnshe 注册登录然后注册那个ccwu.cc的域名打开cloudflare登录后点击左边栏的”域名&amp;#x2F;预览”再在右上角点”添加域名””连接域名”输入你在dnshe上注册的域名 点击”继续”然后选免费的那个下拉到底选择”前",
+          date: "Fri Apr 24 2026 14:36:12 GMT+0800",
+          updated: "Fri Apr 24 2026 15:50:43 GMT+0800",
+          cover: "/images/banner.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.3' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+
+
+
+  </body>
+  </html>
